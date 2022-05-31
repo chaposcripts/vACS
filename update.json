@@ -1,5 +1,5 @@
 {
-  "last":"1.1",
-  "url":"https://cdn.discordapp.com/attachments/977663487998328852/977665182874632292/vAcs_by_chapo_2.lua",
-  "changelog":"- добавлена возможность менять цвет добавленных вручную предметов\n- удалена проверка на название файла"
+  "last":"1.2",
+  "url":"https://cdn.discordapp.com/attachments/977663487998328852/981253986726318080/vAcs_by_chapo.lua",
+  "changelog":"- добавлена система профилей (пресетов)"
 }

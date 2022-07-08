@@ -1,3 +1,4 @@
+-- SAVE THIS FILE WITH Windows-1251
 --========================================================================================--                                             
 --                                                                                        --
 --                               AAA                  CCCCCCCCCCCCC   SSSSSSSSSSSSSSS     --
@@ -30,7 +31,7 @@
 script_name('vACS - Visual Accessories')
 script_author('chapo')
 script_url('https://www.blast.hk/members/112329/')
-script_description('Визуальные аксессуары')
+script_description('Г‚ГЁГ§ГіГ Г«ГјГ­Г»ГҐ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г»')
 script_version('1')
 local LASTVER = thisScript().version
 
@@ -54,13 +55,13 @@ function ColorFloatToVec(col)
 end
 
 local SLOTS_NAMES = {
-    [0] = u8'Голова', 
-    [1] = u8'Лицо', 
-    [2] = u8'Рука', 
-    [3] = u8'Грудь', 
-    [4] = u8'Плечо', 
-    [5] = u8'Спина',
-    [6] = u8'Кейс'
+    [0] = u8'ГѓГ®Г«Г®ГўГ ', 
+    [1] = u8'Г‹ГЁГ¶Г®', 
+    [2] = u8'ГђГіГЄГ ', 
+    [3] = u8'ГѓГ°ГіГ¤Гј', 
+    [4] = u8'ГЏГ«ГҐГ·Г®', 
+    [5] = u8'Г‘ГЇГЁГ­Г ',
+    [6] = u8'ГЉГҐГ©Г±'
 }
 
 
@@ -76,7 +77,7 @@ local SLOTS_NAMES = {
 --        end
 --    end)
 --end
-local TOAST_COLORS = { -- свои цвета
+local TOAST_COLORS = { -- Г±ГўГ®ГЁ Г¶ГўГҐГІГ 
     back = {0.1, 0.13, 0.17, 1},
     text = {1, 1, 1, 1},
     icon = {1, 0, 0.3, 1},
@@ -84,7 +85,7 @@ local TOAST_COLORS = { -- свои цвета
 }
 
 local russian_characters = {
-    [168] = 'Ё', [184] = 'ё', [192] = 'А', [193] = 'Б', [194] = 'В', [195] = 'Г', [196] = 'Д', [197] = 'Е', [198] = 'Ж', [199] = 'З', [200] = 'И', [201] = 'Й', [202] = 'К', [203] = 'Л', [204] = 'М', [205] = 'Н', [206] = 'О', [207] = 'П', [208] = 'Р', [209] = 'С', [210] = 'Т', [211] = 'У', [212] = 'Ф', [213] = 'Х', [214] = 'Ц', [215] = 'Ч', [216] = 'Ш', [217] = 'Щ', [218] = 'Ъ', [219] = 'Ы', [220] = 'Ь', [221] = 'Э', [222] = 'Ю', [223] = 'Я', [224] = 'а', [225] = 'б', [226] = 'в', [227] = 'г', [228] = 'д', [229] = 'е', [230] = 'ж', [231] = 'з', [232] = 'и', [233] = 'й', [234] = 'к', [235] = 'л', [236] = 'м', [237] = 'н', [238] = 'о', [239] = 'п', [240] = 'р', [241] = 'с', [242] = 'т', [243] = 'у', [244] = 'ф', [245] = 'х', [246] = 'ц', [247] = 'ч', [248] = 'ш', [249] = 'щ', [250] = 'ъ', [251] = 'ы', [252] = 'ь', [253] = 'э', [254] = 'ю', [255] = 'я',
+    [168] = 'ВЁ', [184] = 'Вё', [192] = 'ГЂ', [193] = 'ГЃ', [194] = 'Г‚', [195] = 'Гѓ', [196] = 'Г„', [197] = 'Г…', [198] = 'Г†', [199] = 'Г‡', [200] = 'Г€', [201] = 'Г‰', [202] = 'ГЉ', [203] = 'Г‹', [204] = 'ГЊ', [205] = 'ГЌ', [206] = 'ГЋ', [207] = 'ГЏ', [208] = 'Гђ', [209] = 'Г‘', [210] = 'Г’', [211] = 'Г“', [212] = 'Г”', [213] = 'Г•', [214] = 'Г–', [215] = 'Г—', [216] = 'Г', [217] = 'Г™', [218] = 'Гљ', [219] = 'Г›', [220] = 'Гњ', [221] = 'Гќ', [222] = 'Гћ', [223] = 'Гџ', [224] = 'Г ', [225] = 'ГЎ', [226] = 'Гў', [227] = 'ГЈ', [228] = 'Г¤', [229] = 'ГҐ', [230] = 'Г¦', [231] = 'Г§', [232] = 'ГЁ', [233] = 'Г©', [234] = 'ГЄ', [235] = 'Г«', [236] = 'Г¬', [237] = 'Г­', [238] = 'Г®', [239] = 'ГЇ', [240] = 'Г°', [241] = 'Г±', [242] = 'ГІ', [243] = 'Гі', [244] = 'Гґ', [245] = 'Гµ', [246] = 'Г¶', [247] = 'Г·', [248] = 'Гё', [249] = 'Г№', [250] = 'Гє', [251] = 'Г»', [252] = 'Гј', [253] = 'ГЅ', [254] = 'Гѕ', [255] = 'Гї',
 }
 function string.rlower(s)
     s = s:lower()
@@ -96,7 +97,7 @@ function string.rlower(s)
         local ch = s:byte(i)
         if ch >= 192 and ch <= 223 then -- upper russian characters
             output = output .. russian_characters[ch + 32]
-        elseif ch == 168 then -- Ё
+        elseif ch == 168 then -- ВЁ
             output = output .. russian_characters[184]
         else
             output = output .. string.char(ch)
@@ -114,7 +115,7 @@ function downloadFile(link, path, callback_LOADED)
     end)
 end
 
-function applySampfuncsPatch() -- Автор: #Northn (https://www.blast.hk/members/146943/)
+function applySampfuncsPatch() -- ГЂГўГІГ®Г°: #Northn (https://www.blast.hk/members/146943/)
     local memory = memory or require 'memory'
     local module = getModuleHandle("SAMPFUNCS.asi")
     if module ~= 0 and memory.compare(module + 0xBABD, memory.strptr('\x8B\x43\x04\x8B\x5C\x24\x20\x8B\x48\x34\x83\xE1'), 12) then
@@ -229,14 +230,14 @@ function update()
     --    local response = requests.get(raw)
     --    if response.status_code == 200 then
     --        downloadUrlToFile(decodeJson(response.text)['url'], thisScript().path, function (id, status, p1, p2)
-    --            print('Скачиваю '..decodeJson(response.text)['url']..' в '..thisScript().path)
+    --            print('Г‘ГЄГ Г·ГЁГўГ Гѕ '..decodeJson(response.text)['url']..' Гў '..thisScript().path)
     --            if status == dlstatus.STATUSEX_ENDDOWNLOAD then
-    --                sampAddChatMessage('Скрипт обновлен, перезагрузка...', -1)
+    --                sampAddChatMessage('Г‘ГЄГ°ГЁГЇГІ Г®ГЎГ­Г®ГўГ«ГҐГ­, ГЇГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЄГ ...', -1)
     --                thisScript():reload()
     --            end
     --        end)
     --    else
-    --        sampAddChatMessage('Ошибка, невозможно установить обновление, код: '..response.status_code, -1)
+    --        sampAddChatMessage('ГЋГёГЁГЎГЄГ , Г­ГҐГўГ®Г§Г¬Г®Г¦Г­Г® ГіГ±ГІГ Г­Г®ГўГЁГІГј Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ, ГЄГ®Г¤: '..response.status_code, -1)
     --    end
     --end
     --return f
@@ -247,7 +248,7 @@ local ui_meta = {
         if v == "switch" then
             local switch = function()
                 if self.process and self.process:status() ~= "dead" then
-                    return false -- // Предыдущая анимация ещё не завершилась!
+                    return false -- // ГЏГ°ГҐГ¤Г»Г¤ГіГ№Г Гї Г Г­ГЁГ¬Г Г¶ГЁГї ГҐГ№Вё Г­ГҐ Г§Г ГўГҐГ°ГёГЁГ«Г Г±Гј!
                 end
                 self.timer = os.clock()
                 self.state = not self.state
@@ -268,7 +269,7 @@ local ui_meta = {
                         if a == 1.00 then break end
                     end
                 end)
-                return true -- // Состояние окна изменено!
+                return true -- // Г‘Г®Г±ГІГ®ГїГ­ГЁГҐ Г®ГЄГ­Г  ГЁГ§Г¬ГҐГ­ГҐГ­Г®!
             end
             return switch
         end
@@ -374,8 +375,8 @@ function msg(text, mtype, prnt, no_in_chat)
     local TYPES = {
         --[[INFO ]] [0] = '',
         --[[OK   ]] [1] = '',
-        --[[ERROR]] [2] = '{ff0000}[ОШИБКА]',
-        --[[WARN ]] [3] = '[ПРЕДУПРЕЖДЕНИЕ]',
+        --[[ERROR]] [2] = '{ff0000}[ГЋГГ€ГЃГЉГЂ]',
+        --[[WARN ]] [3] = '[ГЏГђГ…Г„Г“ГЏГђГ…Г†Г„Г…ГЌГ€Г…]',
         --[[DEBUG]] [4] = '[DEBUG]'
     }
     if not no_in_chat then
@@ -387,7 +388,7 @@ end
 
 local navigation = {
     current = 1,
-    list = { u8'Аксессуары', u8'Скины', u8'Свои аксессуары', u8'Прочее' }
+    list = { u8'ГЂГЄГ±ГҐГ±Г±ГіГ Г°Г»', u8'Г‘ГЄГЁГ­Г»', u8'Г‘ГўГ®ГЁ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г»', u8'ГЏГ°Г®Г·ГҐГҐ' }
 }
 local selected = {
     [1] = {[0] = 1}
@@ -400,14 +401,14 @@ local TRACKER = {
 }
 
 local color_list_data = {
-    {u8'Стандартный', -1},
-    {u8'Красный', -16776961},
-    {u8'Зеленый', -16711936},
-    {u8'Розовый', -65281},
-    {u8'Оранжевый', -16744193},
-    {u8'Бирюзовый', -256},
-    {u8'Желтый', -16728065},
-    {u8'Синий', -65536},
+    {u8'Г‘ГІГ Г­Г¤Г Г°ГІГ­Г»Г©', -1},
+    {u8'ГЉГ°Г Г±Г­Г»Г©', -16776961},
+    {u8'Г‡ГҐГ«ГҐГ­Г»Г©', -16711936},
+    {u8'ГђГ®Г§Г®ГўГ»Г©', -65281},
+    {u8'ГЋГ°Г Г­Г¦ГҐГўГ»Г©', -16744193},
+    {u8'ГЃГЁГ°ГѕГ§Г®ГўГ»Г©', -256},
+    {u8'Г†ГҐГ«ГІГ»Г©', -16728065},
+    {u8'Г‘ГЁГ­ГЁГ©', -65536},
 }
 
 function getColorByIndex(index)
@@ -452,32 +453,32 @@ local SKIN = {
     DisableCaseAim = imgui.new.bool(s.SKIN.DisableCaseAim),
 
     list_walk = {
-        [u8'Роллер'] = 'skate',
-        [u8'Мужчина'] = 'man', 
-        [u8'Шаффл'] = 'shuffle', 
-        [u8'Дед'] = 'oldman',
-        [u8'Гетто-петушок (1)'] = 'gang1',
-        [u8'Гетто-петушок (2)'] = 'gang2',
-        [u8'Жирный дед'] = 'oldfatman',
-        [u8'Жирный мужик'] = 'fatman',
-        [u8'Пробежка (муж.)'] = 'jogger',
-        [u8'Пьяный'] = 'drunkman',
-        [u8'Слепой (вузи)'] = 'blindman',
+        [u8'ГђГ®Г«Г«ГҐГ°'] = 'skate',
+        [u8'ГЊГіГ¦Г·ГЁГ­Г '] = 'man', 
+        [u8'ГГ ГґГґГ«'] = 'shuffle', 
+        [u8'Г„ГҐГ¤'] = 'oldman',
+        [u8'ГѓГҐГІГІГ®-ГЇГҐГІГіГёГ®ГЄ (1)'] = 'gang1',
+        [u8'ГѓГҐГІГІГ®-ГЇГҐГІГіГёГ®ГЄ (2)'] = 'gang2',
+        [u8'Г†ГЁГ°Г­Г»Г© Г¤ГҐГ¤'] = 'oldfatman',
+        [u8'Г†ГЁГ°Г­Г»Г© Г¬ГіГ¦ГЁГЄ'] = 'fatman',
+        [u8'ГЏГ°Г®ГЎГҐГ¦ГЄГ  (Г¬ГіГ¦.)'] = 'jogger',
+        [u8'ГЏГјГїГ­Г»Г©'] = 'drunkman',
+        [u8'Г‘Г«ГҐГЇГ®Г© (ГўГіГ§ГЁ)'] = 'blindman',
         [u8'S.W.A.T'] = 'swat',
-        [u8'Баба'] = 'woman',
-        [u8'Баба с тележкой'] = 'shopping',
-        [u8'Занятая баба'] = 'busywoman',
-        [u8'Секси чика'] = 'sexywoman',
+        [u8'ГЃГ ГЎГ '] = 'woman',
+        [u8'ГЃГ ГЎГ  Г± ГІГҐГ«ГҐГ¦ГЄГ®Г©'] = 'shopping',
+        [u8'Г‡Г Г­ГїГІГ Гї ГЎГ ГЎГ '] = 'busywoman',
+        [u8'Г‘ГҐГЄГ±ГЁ Г·ГЁГЄГ '] = 'sexywoman',
         [u8'"Pro"'] = 'pro',
-        [u8'Бабка'] = 'oldwoman',
-        [u8'Толстая телка'] = 'fatwoman',
-        [u8'Баба на пробежке'] = 'jogwoman',
-        [u8'Жирная бабка'] = 'oldfatwoman'
+        [u8'ГЃГ ГЎГЄГ '] = 'oldwoman',
+        [u8'Г’Г®Г«Г±ГІГ Гї ГІГҐГ«ГЄГ '] = 'fatwoman',
+        [u8'ГЃГ ГЎГ  Г­Г  ГЇГ°Г®ГЎГҐГ¦ГЄГҐ'] = 'jogwoman',
+        [u8'Г†ГЁГ°Г­Г Гї ГЎГ ГЎГЄГ '] = 'oldfatwoman'
     },
     list_fight = {
-        [u8'Стандарный'] = 4,
-        [u8'Бокс'] = 5,
-        [u8'Кунг-Фу'] = 6,
+        [u8'Г‘ГІГ Г­Г¤Г Г°Г­Г»Г©'] = 4,
+        [u8'ГЃГ®ГЄГ±'] = 5,
+        [u8'ГЉГіГ­ГЈ-Г”Гі'] = 6,
         [u8'Knee head'] = 7,
         [u8'Grabkick'] = 15,
         [u8'Elbows'] = 16,
@@ -806,8 +807,8 @@ local ARMOUR_DATA = {
     ['upgraded'] = {model = 19515,bone = 1,px = 0.020998999476433,py = 0.059999000281096,pz = -0.0010000000474975,rx = -2,ry = -2.4000010490417,rz = -0.60000902414322,sx = 1.1809990406036,sy = 1.2650059461594,sz = 1.180999994278,c1 = false,c2 = false},
     ['default'] = {model = 19142,bone = 1,px = 0.012999000027776,py = 0.0489990003407,pz = 0.0039989999495447,rx = 0,ry = -3.4000020027161,rz = -4.1000018119812,sx = 1.1510020494461,sy = 1.1470010280609,sz = 1.1350040435791,c1 = false,c2 = false},
 }
-local bones_list_arr = {u8'хуй', u8'пизда'}
-local slots_list_arr = {u8'Голова', u8'Лицо', u8'Рука', u8'Грудь', u8'Плечо', u8'Спина', u8'Кейс'}
+local bones_list_arr = {u8'ГµГіГ©', u8'ГЇГЁГ§Г¤Г '}
+local slots_list_arr = {u8'ГѓГ®Г«Г®ГўГ ', u8'Г‹ГЁГ¶Г®', u8'ГђГіГЄГ ', u8'ГѓГ°ГіГ¤Гј', u8'ГЏГ«ГҐГ·Г®', u8'Г‘ГЇГЁГ­Г ', u8'ГЉГҐГ©Г±'}
 local OBJ_CREATE = {
     INDEX = imgui.new.int(8),
     HOOK_SEND = false,
@@ -988,16 +989,16 @@ function vACS()
                     end
                     initCustomAcs()
                     acs_list = sort(acs)--ssortAcsList(acs)
-                    --msg('Список аксессуаров загружен!')
+                    --msg('Г‘ГЇГЁГ±Г®ГЄ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г®Гў Г§Г ГЈГ°ГіГ¦ГҐГ­!')
                     return true, acs
 
                 
                 else
-                    msg('[ОШИБКА] Невозможно обновить список аксессуаров! ([RESPONSE_DATA_TYPE] type ~= table)')
-                    msg('Скрипт продолжит работу, однако если были добалены новые аксессуары, то они будут отсутствовать')
+                    msg('[ГЋГГ€ГЃГЉГЂ] ГЌГҐГўГ®Г§Г¬Г®Г¦Г­Г® Г®ГЎГ­Г®ГўГЁГІГј Г±ГЇГЁГ±Г®ГЄ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г®Гў! ([RESPONSE_DATA_TYPE] type ~= table)')
+                    msg('Г‘ГЄГ°ГЁГЇГІ ГЇГ°Г®Г¤Г®Г«Г¦ГЁГІ Г°Г ГЎГ®ГІГі, Г®Г¤Г­Г ГЄГ® ГҐГ±Г«ГЁ ГЎГ»Г«ГЁ Г¤Г®ГЎГ Г«ГҐГ­Г» Г­Г®ГўГ»ГҐ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г», ГІГ® Г®Г­ГЁ ГЎГіГ¤ГіГІ Г®ГІГ±ГіГІГ±ГІГўГ®ГўГ ГІГј')
                 end
             else
-                msg('[ОШИБКА] Невозможно обновить список аксессуаров! (RESPONSE_STATUS_CODE = '..response.status_code..')')
+                msg('[ГЋГГ€ГЃГЉГЂ] ГЌГҐГўГ®Г§Г¬Г®Г¦Г­Г® Г®ГЎГ­Г®ГўГЁГІГј Г±ГЇГЁГ±Г®ГЄ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г®Гў! (RESPONSE_STATUS_CODE = '..response.status_code..')')
             end
         else
             msg('FATAL_ERROR')
@@ -1085,7 +1086,7 @@ function vACS()
                 raknetEmulRpcReceiveBitStream(113, bs)
                 raknetDeleteBitStream(bs)
             else
-                msg('[ОШИБКА] Невозможно создать объект, отсутствует ключ "'..REASON..'" (slot index='..index..', data=data)')
+                msg('[ГЋГГ€ГЃГЉГЂ] ГЌГҐГўГ®Г§Г¬Г®Г¦Г­Г® Г±Г®Г§Г¤Г ГІГј Г®ГЎГєГҐГЄГІ, Г®ГІГ±ГіГІГ±ГІГўГіГҐГІ ГЄГ«ГѕГ· "'..REASON..'" (slot index='..index..', data=data)')
             end
         end
     end
@@ -1120,7 +1121,7 @@ function vACS()
                 if acs[SLOT] and ACS[SLOT] then
                     c:SetItem(SLOT, acs[SLOT][v.item], getColorByIndex(ACS[SLOT].color), getColorByIndex(ACS[SLOT].color))
                 else
-                    msg('[ОШИБКА] vACS():SetAllItems() -> ACS[SLOT] or acs[SLOT] = nil, SLOT = '..SLOT)
+                    msg('[ГЋГГ€ГЃГЉГЂ] vACS():SetAllItems() -> ACS[SLOT] or acs[SLOT] = nil, SLOT = '..SLOT)
                 end
             else
                 c:Clear(SLOT)
@@ -1160,15 +1161,15 @@ local EDITOR = {
     model = imgui.new.int(0),
     item = 'none',
     win = imgui.new.bool(false),
-    px = {var = imgui.new.float(0), name = u8'Положение X'},
-    py = {var = imgui.new.float(0), name = u8'Положение Y'},
-    pz = {var = imgui.new.float(0), name = u8'Положение Z'},
-    rx = {var = imgui.new.float(0), name = u8'Поворот X'},
-    ry = {var = imgui.new.float(0), name = u8'Поворот Y'},
-    rz = {var = imgui.new.float(0), name = u8'Поворот Z'},
-    sx = {var = imgui.new.float(0), name = u8'Размер X'},
-    sy = {var = imgui.new.float(0), name = u8'Размер Y'},
-    sz = {var = imgui.new.float(0), name = u8'Размер Z'},
+    px = {var = imgui.new.float(0), name = u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ X'},
+    py = {var = imgui.new.float(0), name = u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Y'},
+    pz = {var = imgui.new.float(0), name = u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Z'},
+    rx = {var = imgui.new.float(0), name = u8'ГЏГ®ГўГ®Г°Г®ГІ X'},
+    ry = {var = imgui.new.float(0), name = u8'ГЏГ®ГўГ®Г°Г®ГІ Y'},
+    rz = {var = imgui.new.float(0), name = u8'ГЏГ®ГўГ®Г°Г®ГІ Z'},
+    sx = {var = imgui.new.float(0), name = u8'ГђГ Г§Г¬ГҐГ° X'},
+    sy = {var = imgui.new.float(0), name = u8'ГђГ Г§Г¬ГҐГ° Y'},
+    sz = {var = imgui.new.float(0), name = u8'ГђГ Г§Г¬ГҐГ° Z'},
     newname = imgui.new.char[64]('newName')
 }
 
@@ -1223,26 +1224,26 @@ local updateFrame = imgui.OnFrame(
         local sizeX, sizeY = 300, 300
         imgui.SetNextWindowPos(imgui.ImVec2(resX / 2, resY / 2), imgui.Cond.FirstUseEver, imgui.ImVec2(0.5, 0.5))
         imgui.SetNextWindowSize(imgui.ImVec2(sizeX, sizeY), imgui.Cond.FirstUseEver)
-        imgui.Begin(u8'Доступно обновление!', _, imgui.WindowFlags.NoResize + imgui.WindowFlags.NoCollapse + imgui.WindowFlags.NoTitleBar)
+        imgui.Begin(u8'Г„Г®Г±ГІГіГЇГ­Г® Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ!', _, imgui.WindowFlags.NoResize + imgui.WindowFlags.NoCollapse + imgui.WindowFlags.NoTitleBar)
         local size = imgui.GetWindowSize()
      
         imgui.PushFont(font[16].b)
-        imgui.CenterText(u8'Доступно обновление!')
+        imgui.CenterText(u8'Г„Г®Г±ГІГіГЇГ­Г® Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ!')
         imgui.NewLine()
-        imgui.CenterText(u8'Текущая версия: '..tostring(thisScript().version))
-        imgui.CenterText(u8'Последняя версия: '..tostring(LASTVER))
-        imgui.CenterText(u8'Изменения:')
+        imgui.CenterText(u8'Г’ГҐГЄГіГ№Г Гї ГўГҐГ°Г±ГЁГї: '..tostring(thisScript().version))
+        imgui.CenterText(u8'ГЏГ®Г±Г«ГҐГ¤Г­ГїГї ГўГҐГ°Г±ГЁГї: '..tostring(LASTVER))
+        imgui.CenterText(u8'Г€Г§Г¬ГҐГ­ГҐГ­ГЁГї:')
         imgui.PopFont()
         imgui.PushFont(font[16].r)
         imgui.InputTextMultiline('##changelog', imgui.new.char[#UPDATE_WINDOW.changelog + 1](UPDATE_WINDOW.changelog), #UPDATE_WINDOW.changelog + 1, imgui.ImVec2(size.x - 10, 130), imgui.InputTextFlags.ReadOnly)
         imgui.PopFont()
         imgui.SetCursorPos(imgui.ImVec2(5, size.y - 24 - 5 - 35 - 5))
-        if imgui.Button(u8'Обновить', imgui.ImVec2(size.x - 10, 35)) then 
+        if imgui.Button(u8'ГЋГЎГ­Г®ГўГЁГІГј', imgui.ImVec2(size.x - 10, 35)) then 
             update():Download(UPDATE_WINDOW.url)
         end
         
         imgui.SetCursorPos(imgui.ImVec2(5, size.y - 24 - 5))
-        if imgui.Button(u8'Закрыть', imgui.ImVec2(size.x - 10, 24)) then 
+        if imgui.Button(u8'Г‡Г ГЄГ°Г»ГІГј', imgui.ImVec2(size.x - 10, 24)) then 
             UPDATE_WINDOW.win[0] = false
         end
         
@@ -1260,7 +1261,7 @@ local editorFrame = imgui.OnFrame(
         local sizeX, sizeY = 300, 500
         imgui.SetNextWindowSize(imgui.ImVec2(sizeX, sizeY), imgui.Cond.FirstUseEver)
         imgui.SetNextWindowPos(imgui.ImVec2(sizeX, resY / 2), imgui.Cond.Always, imgui.ImVec2(0, 0.5))
-        imgui.Begin(u8'vAcs | "'..EDITOR.item..u8'" (слот: '..tostring(EDITOR.slot[0])..')', EDITOR.win, imgui.WindowFlags.NoMove + imgui.WindowFlags.NoResize + imgui.WindowFlags.NoTitleBar + imgui.WindowFlags.NoBackground)
+        imgui.Begin(u8'vAcs | "'..EDITOR.item..u8'" (Г±Г«Г®ГІ: '..tostring(EDITOR.slot[0])..')', EDITOR.win, imgui.WindowFlags.NoMove + imgui.WindowFlags.NoResize + imgui.WindowFlags.NoTitleBar + imgui.WindowFlags.NoBackground)
             
         --for k, v in pairs(EDITOR) do
         --    if type(v) == 'table' then
@@ -1269,27 +1270,27 @@ local editorFrame = imgui.OnFrame(
         --end
 
         imgui.SetCursorPos(imgui.ImVec2(5, 5))
-        imgui.FunctionChild(u8'Редактирование предмета', EDITOR.item..u8', слот: '..SLOTS_NAMES[EDITOR.slot[0]]..' (#'..tostring(EDITOR.slot[0])..')', nil, imgui.ImVec2(sizeX - 10, sizeY - 10), nil)
+        imgui.FunctionChild(u8'ГђГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГҐ ГЇГ°ГҐГ¤Г¬ГҐГІГ ', EDITOR.item..u8', Г±Г«Г®ГІ: '..SLOTS_NAMES[EDITOR.slot[0]]..' (#'..tostring(EDITOR.slot[0])..')', nil, imgui.ImVec2(sizeX - 10, sizeY - 10), nil)
             
-            if imgui.SliderFloat(u8'Положение X', EDITOR.px.var, -3, 3) then EDITOR:ApplyCustom() end
-            if imgui.SliderFloat(u8'Положение Y', EDITOR.py.var, -3, 3) then EDITOR:ApplyCustom() end
-            if imgui.SliderFloat(u8'Положение Z', EDITOR.pz.var, -3, 3) then EDITOR:ApplyCustom() end
+            if imgui.SliderFloat(u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ X', EDITOR.px.var, -3, 3) then EDITOR:ApplyCustom() end
+            if imgui.SliderFloat(u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Y', EDITOR.py.var, -3, 3) then EDITOR:ApplyCustom() end
+            if imgui.SliderFloat(u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Z', EDITOR.pz.var, -3, 3) then EDITOR:ApplyCustom() end
             imgui.Separator()
-            if imgui.SliderFloat(u8'Поворот X', EDITOR.rx.var, 0, 360) then EDITOR:ApplyCustom() end
-            if imgui.SliderFloat(u8'Поворот Y', EDITOR.ry.var, 0, 360) then EDITOR:ApplyCustom() end
-            if imgui.SliderFloat(u8'Поворот Z', EDITOR.rz.var, 0, 360) then EDITOR:ApplyCustom() end
+            if imgui.SliderFloat(u8'ГЏГ®ГўГ®Г°Г®ГІ X', EDITOR.rx.var, 0, 360) then EDITOR:ApplyCustom() end
+            if imgui.SliderFloat(u8'ГЏГ®ГўГ®Г°Г®ГІ Y', EDITOR.ry.var, 0, 360) then EDITOR:ApplyCustom() end
+            if imgui.SliderFloat(u8'ГЏГ®ГўГ®Г°Г®ГІ Z', EDITOR.rz.var, 0, 360) then EDITOR:ApplyCustom() end
             imgui.Separator()
-            if imgui.SliderFloat(u8'Размер X', EDITOR.sx.var, 0, 5) then EDITOR:ApplyCustom() end
-            if imgui.SliderFloat(u8'Размер Y', EDITOR.sy.var, 0, 5) then EDITOR:ApplyCustom() end
-            if imgui.SliderFloat(u8'Размер Z', EDITOR.sz.var, 0, 5) then EDITOR:ApplyCustom() end
+            if imgui.SliderFloat(u8'ГђГ Г§Г¬ГҐГ° X', EDITOR.sx.var, 0, 5) then EDITOR:ApplyCustom() end
+            if imgui.SliderFloat(u8'ГђГ Г§Г¬ГҐГ° Y', EDITOR.sy.var, 0, 5) then EDITOR:ApplyCustom() end
+            if imgui.SliderFloat(u8'ГђГ Г§Г¬ГҐГ° Z', EDITOR.sz.var, 0, 5) then EDITOR:ApplyCustom() end
 
             imgui.Separator()
-            imgui.InputText(u8'Новое название', EDITOR.newname, 64)
+            imgui.InputText(u8'ГЌГ®ГўГ®ГҐ Г­Г Г§ГўГ Г­ГЁГҐ', EDITOR.newname, 64)
 
-            imgui.CenterText(u8'Зажмите ПКМ что бы двигать камеру')
+            imgui.CenterText(u8'Г‡Г Г¦Г¬ГЁГІГҐ ГЏГЉГЊ Г·ГІГ® ГЎГ» Г¤ГўГЁГЈГ ГІГј ГЄГ Г¬ГҐГ°Гі')
 
             imgui.SetCursorPos(imgui.ImVec2(5, sizeY - 40 - 50 - 10 - 20))
-            if imgui.Button(u8'Сохранить', imgui.ImVec2(sizeX - 10 - 25, 24)) then
+            if imgui.Button(u8'Г‘Г®ГµГ°Г Г­ГЁГІГј', imgui.ImVec2(sizeX - 10 - 25, 24)) then
                 local data = EDITOR:GenerateItemData()
                 local slot = tostring(EDITOR.slot[0])
                 if custom_acs[slot] then
@@ -1304,7 +1305,7 @@ local editorFrame = imgui.OnFrame(
                     [6] = {}
                 })
                     initCustomAcs()
-                    msg('Отредактированный предмет сохранен как "[EDITED] '..u8:decode(ffi.string(EDITOR.newname))..'" в разделе "'..u8:decode(SLOTS_NAMES[EDITOR.slot[0]])..'"')
+                    msg('ГЋГІГ°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ Г±Г®ГµГ°Г Г­ГҐГ­ ГЄГ ГЄ "[EDITED] '..u8:decode(ffi.string(EDITOR.newname))..'" Гў Г°Г Г§Г¤ГҐГ«ГҐ "'..u8:decode(SLOTS_NAMES[EDITOR.slot[0]])..'"')
                     ACS[EDITOR.slot[0]].item = '[EDITED] '..ffi.string(EDITOR.newname)
                 else
                     msg('UNKNOWN_SLOT')
@@ -1314,7 +1315,7 @@ local editorFrame = imgui.OnFrame(
             end
 
             imgui.SetCursorPos(imgui.ImVec2(5, sizeY - 40 - 50))
-            if imgui.Button(u8'Закрыть', imgui.ImVec2(sizeX - 10 - 25, 24)) then
+            if imgui.Button(u8'Г‡Г ГЄГ°Г»ГІГј', imgui.ImVec2(sizeX - 10 - 25, 24)) then
                 if not menu.state then menu.switch() end
                 EDITOR.win[0] = false
             end
@@ -1356,7 +1357,7 @@ function OBJ_CREATE:CreateObject()
         catch {
             function(error)
                 if error:find('call caused an unhandled exception') then
-                    msg('Модели "'..OBJ_CREATE.model[0]..'" не существует :(', toast.TYPE.ERROR, true)
+                    msg('ГЊГ®Г¤ГҐГ«ГЁ "'..OBJ_CREATE.model[0]..'" Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ :(', toast.TYPE.ERROR, true)
                 end
             end
         }
@@ -1366,24 +1367,24 @@ function OBJ_CREATE:CreateObject()
 end
 
 local BONES_NAMES = {
-    [1] = u8'Спина',
-    [2] = u8'Голова',
-    [3] = u8'Плечо левой руки',
-    [4] = u8'Плечо правой руки',
-    [5] = u8'Левая рука',
-    [6] = u8'Правая рука',
-    [7] = u8'Левое бедро',
-    [8] = u8'Правое бедро',
-    [9] = u8'Левая нога',
-    [10] = u8'Правая нога',
-    [11] = u8'Правая голень',
-    [12] = u8'Левая голень',
-    [13] = u8'Левое предплечье',
-    [14] = u8'Правое предплечье',
-    [15] = u8'Левая ключица',
-    [16] = u8'Правая ключица',
-    [17] = u8'Шея',
-    [18] = u8'Челюсть'
+    [1] = u8'Г‘ГЇГЁГ­Г ',
+    [2] = u8'ГѓГ®Г«Г®ГўГ ',
+    [3] = u8'ГЏГ«ГҐГ·Г® Г«ГҐГўГ®Г© Г°ГіГЄГЁ',
+    [4] = u8'ГЏГ«ГҐГ·Г® ГЇГ°Г ГўГ®Г© Г°ГіГЄГЁ',
+    [5] = u8'Г‹ГҐГўГ Гї Г°ГіГЄГ ',
+    [6] = u8'ГЏГ°Г ГўГ Гї Г°ГіГЄГ ',
+    [7] = u8'Г‹ГҐГўГ®ГҐ ГЎГҐГ¤Г°Г®',
+    [8] = u8'ГЏГ°Г ГўГ®ГҐ ГЎГҐГ¤Г°Г®',
+    [9] = u8'Г‹ГҐГўГ Гї Г­Г®ГЈГ ',
+    [10] = u8'ГЏГ°Г ГўГ Гї Г­Г®ГЈГ ',
+    [11] = u8'ГЏГ°Г ГўГ Гї ГЈГ®Г«ГҐГ­Гј',
+    [12] = u8'Г‹ГҐГўГ Гї ГЈГ®Г«ГҐГ­Гј',
+    [13] = u8'Г‹ГҐГўГ®ГҐ ГЇГ°ГҐГ¤ГЇГ«ГҐГ·ГјГҐ',
+    [14] = u8'ГЏГ°Г ГўГ®ГҐ ГЇГ°ГҐГ¤ГЇГ«ГҐГ·ГјГҐ',
+    [15] = u8'Г‹ГҐГўГ Гї ГЄГ«ГѕГ·ГЁГ¶Г ',
+    [16] = u8'ГЏГ°Г ГўГ Гї ГЄГ«ГѕГ·ГЁГ¶Г ',
+    [17] = u8'ГГҐГї',
+    [18] = u8'Г—ГҐГ«ГѕГ±ГІГј'
 }
 
 local OBJ_CREATEFrame = imgui.OnFrame(
@@ -1399,10 +1400,10 @@ local OBJ_CREATEFrame = imgui.OnFrame(
 
         imgui.SetCursorPos(imgui.ImVec2(5, 5))
         imgui.PushFont(font[16].b)
-        imgui.TextColored(ColorFloatToVec(COLORS.elements), u8'Создание объекта')
+        imgui.TextColored(ColorFloatToVec(COLORS.elements), u8'Г‘Г®Г§Г¤Г Г­ГЁГҐ Г®ГЎГєГҐГЄГІГ ')
         imgui.PopFont()
         imgui.SameLine()
-        imgui.TextDisabled(u8'Зажми ПКМ что бы двигать камерой')
+        imgui.TextDisabled(u8'Г‡Г Г¦Г¬ГЁ ГЏГЉГЊ Г·ГІГ® ГЎГ» Г¤ГўГЁГЈГ ГІГј ГЄГ Г¬ГҐГ°Г®Г©')
         
         imgui.SetCursorPos(imgui.ImVec2(sizeX - 25, 5))
         if imgui.Button('X##OBJ_CREATE__CLOSEBUTTON', imgui.ImVec2(20, 20)) then 
@@ -1412,7 +1413,7 @@ local OBJ_CREATEFrame = imgui.OnFrame(
             vACS():SetAllItems()
             OBJ_CREATE:ClearVars()
         end
-        imgui.Hint('exitOBJ_CREATE.win[0]', u8'Закрыть окно создания объекта')
+        imgui.Hint('exitOBJ_CREATE.win[0]', u8'Г‡Г ГЄГ°Г»ГІГј Г®ГЄГ­Г® Г±Г®Г§Г¤Г Г­ГЁГї Г®ГЎГєГҐГЄГІГ ')
         --for k, v in pairs(EDITOR) do
         --    if type(v) == 'table' then
         --        imgui.SliderFloat(v.name, v.var, -1, 1)
@@ -1424,54 +1425,54 @@ local OBJ_CREATEFrame = imgui.OnFrame(
         imgui.PushStyleColor(imgui.Col.FrameBgActive, ColorFloatToVec(COLORS.back)) -- CRASH
         
         imgui.SetCursorPos(imgui.ImVec2(5, 25))
-        imgui.FunctionChild(u8'Основное', u8'Основные настройки модели', nil, imgui.ImVec2(sizeX - 10, 135 + 20 + 10), nil)
-            imgui.InputText(u8'Название', OBJ_CREATE.name, 64)
-            imgui.Hint('OBJ_CREATE.name', u8'С таким названием объект будет сохранен в списке')
+        imgui.FunctionChild(u8'ГЋГ±Г­Г®ГўГ­Г®ГҐ', u8'ГЋГ±Г­Г®ГўГ­Г»ГҐ Г­Г Г±ГІГ°Г®Г©ГЄГЁ Г¬Г®Г¤ГҐГ«ГЁ', nil, imgui.ImVec2(sizeX - 10, 135 + 20 + 10), nil)
+            imgui.InputText(u8'ГЌГ Г§ГўГ Г­ГЁГҐ', OBJ_CREATE.name, 64)
+            imgui.Hint('OBJ_CREATE.name', u8'Г‘ ГІГ ГЄГЁГ¬ Г­Г Г§ГўГ Г­ГЁГҐГ¬ Г®ГЎГєГҐГЄГІ ГЎГіГ¤ГҐГІ Г±Г®ГµГ°Г Г­ГҐГ­ Гў Г±ГЇГЁГ±ГЄГҐ')
 
             if imgui.SliderInt('##OBJ_CREATE.slot', OBJ_CREATE.slot, 0, 6) then  OBJ_CREATE:CreateObject() end
-            imgui.Hint('OBJ_CREATE.slot', u8'Слот в который будет сохранен объект')
+            imgui.Hint('OBJ_CREATE.slot', u8'Г‘Г«Г®ГІ Гў ГЄГ®ГІГ®Г°Г»Г© ГЎГіГ¤ГҐГІ Г±Г®ГµГ°Г Г­ГҐГ­ Г®ГЎГєГҐГЄГІ')
             
-            imgui.SameLine() imgui.Text(u8'Слот: '..(SLOTS_NAMES[OBJ_CREATE.slot[0]] or 'NONE'))
+            imgui.SameLine() imgui.Text(u8'Г‘Г«Г®ГІ: '..(SLOTS_NAMES[OBJ_CREATE.slot[0]] or 'NONE'))
             if imgui.SliderInt('##OBJ_CREATE.bone', OBJ_CREATE.bone, 1, 18) then  OBJ_CREATE:CreateObject() end
-            imgui.Hint('OBJ_CREATE.bone', u8'Кость к которой прикреплен объект')
-            imgui.SameLine() imgui.Text(u8'Кость: '..(BONES_NAMES[OBJ_CREATE.bone[0]] or 'NONE'))
+            imgui.Hint('OBJ_CREATE.bone', u8'ГЉГ®Г±ГІГј ГЄ ГЄГ®ГІГ®Г°Г®Г© ГЇГ°ГЁГЄГ°ГҐГЇГ«ГҐГ­ Г®ГЎГєГҐГЄГІ')
+            imgui.SameLine() imgui.Text(u8'ГЉГ®Г±ГІГј: '..(BONES_NAMES[OBJ_CREATE.bone[0]] or 'NONE'))
 
-            if imgui.InputInt(u8'ID Объекта', OBJ_CREATE.model) then OBJ_CREATE:CreateObject() end
+            if imgui.InputInt(u8'ID ГЋГЎГєГҐГЄГІГ ', OBJ_CREATE.model) then OBJ_CREATE:CreateObject() end
             imgui.SameLine()
-            if imgui.Button(u8'Найти', imgui.ImVec2(50, 24)) then
+            if imgui.Button(u8'ГЌГ Г©ГІГЁ', imgui.ImVec2(50, 24)) then
                 os.execute('explorer "https://dev.prineside.com/ru/gtasa_samp_model_id/"')
             end
         imgui.EndChild()
         imgui.PopStyleColor()
 
         imgui.SetCursorPos(imgui.ImVec2(5, 25 + 135 + 5 + 20 + 10))
-        imgui.FunctionChild(u8'Положение', u8'Положение относительно игрока', nil, imgui.ImVec2(sizeX - 10, 135), nil)
-            if imgui.SliderFloat(u8'Положение X', OBJ_CREATE.px, -3, 3) then OBJ_CREATE:CreateObject() end
-            if imgui.SliderFloat(u8'Положение Y', OBJ_CREATE.py, -3, 3) then OBJ_CREATE:CreateObject() end
-            if imgui.SliderFloat(u8'Положение Z', OBJ_CREATE.pz, -3, 3) then OBJ_CREATE:CreateObject() end
+        imgui.FunctionChild(u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ', u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Г®ГІГ­Г®Г±ГЁГІГҐГ«ГјГ­Г® ГЁГЈГ°Г®ГЄГ ', nil, imgui.ImVec2(sizeX - 10, 135), nil)
+            if imgui.SliderFloat(u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ X', OBJ_CREATE.px, -3, 3) then OBJ_CREATE:CreateObject() end
+            if imgui.SliderFloat(u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Y', OBJ_CREATE.py, -3, 3) then OBJ_CREATE:CreateObject() end
+            if imgui.SliderFloat(u8'ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Z', OBJ_CREATE.pz, -3, 3) then OBJ_CREATE:CreateObject() end
         imgui.EndChild()
         imgui.PopStyleColor()
 
         imgui.SetCursorPos(imgui.ImVec2(5, 25 + 135 + 5 + 135 + 5 + 20 + 10))
-        imgui.FunctionChild(u8'Углы поворота', u8'Поворот объекта', nil, imgui.ImVec2(sizeX - 10, 135), nil)
-            if imgui.SliderFloat(u8'Поворот X', OBJ_CREATE.rx, 0, 360) then OBJ_CREATE:CreateObject() end
-            if imgui.SliderFloat(u8'Поворот Y', OBJ_CREATE.ry, 0, 360) then OBJ_CREATE:CreateObject() end
-            if imgui.SliderFloat(u8'Поворот Z', OBJ_CREATE.rz, 0, 360) then OBJ_CREATE:CreateObject() end
+        imgui.FunctionChild(u8'Г“ГЈГ«Г» ГЇГ®ГўГ®Г°Г®ГІГ ', u8'ГЏГ®ГўГ®Г°Г®ГІ Г®ГЎГєГҐГЄГІГ ', nil, imgui.ImVec2(sizeX - 10, 135), nil)
+            if imgui.SliderFloat(u8'ГЏГ®ГўГ®Г°Г®ГІ X', OBJ_CREATE.rx, 0, 360) then OBJ_CREATE:CreateObject() end
+            if imgui.SliderFloat(u8'ГЏГ®ГўГ®Г°Г®ГІ Y', OBJ_CREATE.ry, 0, 360) then OBJ_CREATE:CreateObject() end
+            if imgui.SliderFloat(u8'ГЏГ®ГўГ®Г°Г®ГІ Z', OBJ_CREATE.rz, 0, 360) then OBJ_CREATE:CreateObject() end
         imgui.EndChild()
         imgui.PopStyleColor()
         
         imgui.SetCursorPos(imgui.ImVec2(5, 25 + 135 + 10 + 135 + 5 + 135 + 20 + 10))
-        imgui.FunctionChild(u8'Размер', u8'Размеры объекта', nil, imgui.ImVec2(sizeX - 10, 135), nil)
-            if imgui.SliderFloat(u8'Размер X', OBJ_CREATE.sx, 0, 5) then OBJ_CREATE:CreateObject() end
-            if imgui.SliderFloat(u8'Размер Y', OBJ_CREATE.sy, 0, 5) then OBJ_CREATE:CreateObject() end
-            if imgui.SliderFloat(u8'Размер Z', OBJ_CREATE.sz, 0, 5) then OBJ_CREATE:CreateObject() end
+        imgui.FunctionChild(u8'ГђГ Г§Г¬ГҐГ°', u8'ГђГ Г§Г¬ГҐГ°Г» Г®ГЎГєГҐГЄГІГ ', nil, imgui.ImVec2(sizeX - 10, 135), nil)
+            if imgui.SliderFloat(u8'ГђГ Г§Г¬ГҐГ° X', OBJ_CREATE.sx, 0, 5) then OBJ_CREATE:CreateObject() end
+            if imgui.SliderFloat(u8'ГђГ Г§Г¬ГҐГ° Y', OBJ_CREATE.sy, 0, 5) then OBJ_CREATE:CreateObject() end
+            if imgui.SliderFloat(u8'ГђГ Г§Г¬ГҐГ° Z', OBJ_CREATE.sz, 0, 5) then OBJ_CREATE:CreateObject() end
         imgui.EndChild()
         imgui.PopStyleColor()
         imgui.PopStyleColor(3)
         
 
         imgui.SetCursorPos(imgui.ImVec2(5, sizeY - 29 - 29))
-        if imgui.Button(u8'Сохранить', imgui.ImVec2(sizeX - 10, 24)) then
+        if imgui.Button(u8'Г‘Г®ГµГ°Г Г­ГЁГІГј', imgui.ImVec2(sizeX - 10, 24)) then
             local slot = tostring(OBJ_CREATE.slot[0])
             if custom_acs[slot] then
                 local DATA = {bone = OBJ_CREATE.bone[0],model = OBJ_CREATE.model[0],px = OBJ_CREATE.px[0],py = OBJ_CREATE.py[0],pz = OBJ_CREATE.pz[0],rx = OBJ_CREATE.rx[0],ry = OBJ_CREATE.ry[0],rz = OBJ_CREATE.rz[0],sx = OBJ_CREATE.sx[0],sy = OBJ_CREATE.sy[0],sz = OBJ_CREATE.sz[0],c1 = -1,c2 = -1}
@@ -1479,20 +1480,20 @@ local OBJ_CREATEFrame = imgui.OnFrame(
                 json(JSON_FILES.custom_acs):Save(custom_acs)
                 custom_acs = json(JSON_FILES.custom_acs):Load({})
                 initCustomAcs()
-                msg('Отредактированный предмет сохранен как "[CUSTOM] '..u8:decode(ffi.string(OBJ_CREATE.name))..'" в разделе "'..u8:decode(SLOTS_NAMES[OBJ_CREATE.slot[0]])..'"')
+                msg('ГЋГІГ°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ Г±Г®ГµГ°Г Г­ГҐГ­ ГЄГ ГЄ "[CUSTOM] '..u8:decode(ffi.string(OBJ_CREATE.name))..'" Гў Г°Г Г§Г¤ГҐГ«ГҐ "'..u8:decode(SLOTS_NAMES[OBJ_CREATE.slot[0]])..'"')
                 ACS[tonumber(slot)].item = '[CUSTOM] '..ffi.string(OBJ_CREATE.name)
                 navigation.current = 1
             else
-                msg('Слот не найден', toast.TYPE.ERROR, true)
+                msg('Г‘Г«Г®ГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­', toast.TYPE.ERROR, true)
             end
             if not menu.state then menu.switch() end
             OBJ_CREATE.win[0] = false
             vACS():SetAllItems()
             OBJ_CREATE:ClearVars()
         end
-        imgui.Hint('custobjsave', u8'Отредактированный предмет будет сохранен как "[EDITED] '..ffi.string(OBJ_CREATE.name)..u8'" в разделе "'..SLOTS_NAMES[OBJ_CREATE.slot[0]]..'"')
+        imgui.Hint('custobjsave', u8'ГЋГІГ°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ ГЎГіГ¤ГҐГІ Г±Г®ГµГ°Г Г­ГҐГ­ ГЄГ ГЄ "[EDITED] '..ffi.string(OBJ_CREATE.name)..u8'" Гў Г°Г Г§Г¤ГҐГ«ГҐ "'..SLOTS_NAMES[OBJ_CREATE.slot[0]]..'"')
         imgui.SetCursorPos(imgui.ImVec2(5, sizeY - 29))
-        if imgui.Button(u8'Закрыть', imgui.ImVec2(sizeX - 10, 24)) then
+        if imgui.Button(u8'Г‡Г ГЄГ°Г»ГІГј', imgui.ImVec2(sizeX - 10, 24)) then
             vACS():Clear(8)
             if not menu.state then menu.switch() end
             OBJ_CREATE.win[0] = false
@@ -1555,7 +1556,7 @@ function onSendRpc(id, bs)
             if sampIsLocalPlayerSpawned() then
                 menu.switch()
             else
-                msg('Недоступно, дождитесь спавна.')
+                msg('ГЌГҐГ¤Г®Г±ГІГіГЇГ­Г®, Г¤Г®Г¦Г¤ГЁГІГҐГ±Гј Г±ГЇГ ГўГ­Г .')
             end
             return false
         elseif cmd == '/vacs.tracker' then
@@ -1565,7 +1566,7 @@ function onSendRpc(id, bs)
             SKIN.model[0] = tonumber(skinId)
             SKIN.SkinChanger[0] = true
             vACS():SetSkin(SKIN.model[0])
-            msg('Скин изменен на '..SKIN.model[0]..'!', toast.TYPE.OK, true, true)
+            msg('Г‘ГЄГЁГ­ ГЁГ§Г¬ГҐГ­ГҐГ­ Г­Г  '..SKIN.model[0]..'!', toast.TYPE.OK, true, true)
             return false
         elseif cmd:match('/vacs __debug edit (%d+)') then
             local id = cmd:match('/vacs __debug edit (%d+)') 
@@ -1580,7 +1581,7 @@ function onSendRpc(id, bs)
                     --renderWindow[0] = not renderWindow[0]
                     menu.switch()
                 else
-                    msg('Недоступно, дождитесь спавна.')
+                    msg('ГЌГҐГ¤Г®Г±ГІГіГЇГ­Г®, Г¤Г®Г¦Г¤ГЁГІГҐГ±Гј Г±ГЇГ ГўГ­Г .')
                 end
             end)
             sampRegisterChatCommand('vacs.tracker', function()
@@ -1652,7 +1653,7 @@ imgui.OnInitialize(function()
     --==[ FONT ]==--
     local builder = imgui.ImFontGlyphRangesBuilder()
     builder:AddRanges(imgui.GetIO().Fonts:GetGlyphRangesCyrillic())
-    builder:AddText("‚„…†‡€‰‹‘’“”•–-™›№")
+    builder:AddText("В‚В„В…В†В‡В€В‰В‹В‘В’В“В”В•В–-В™В›В№")
     local range = imgui.ImVector_ImWchar()
     builder:BuildRanges(range)
  	
@@ -1669,11 +1670,11 @@ local ROLLERFIX_object = nil
 local ADD_CUSTOM = {
     name_input = imgui.new.char[128]('name'),
     slot = imgui.new.int(0),
-    slot_list = imgui.new['const char*'][6]({u8'Голова', u8'Лицо', u8'Рука', u8'Грудь', u8'Плечо', u8'Спина'}),
+    slot_list = imgui.new['const char*'][6]({u8'ГѓГ®Г«Г®ГўГ ', u8'Г‹ГЁГ¶Г®', u8'ГђГіГЄГ ', u8'ГѓГ°ГіГ¤Гј', u8'ГЏГ«ГҐГ·Г®', u8'Г‘ГЇГЁГ­Г '}),
     pattern = '%["(.+)"%] = {model=(.+),bone=(.+),px=(.+),py=(.+),pz=(.+),rx=(.+),ry=(.+),rz=(.+),sx=(.+),sy=(.+),sz=(.+),c1=(.+),c2=(.+)},',
     example = '["name"] = {model=int,bone=int,px=float,py=float,pz=float,rx=float,ry=float,rz=float,sx=float,sy=float,sz=float,c1=int/bool,c2=int/bool},',
     input = imgui.new.char[512](''),
-    input_tip = '["Название"] = {model = int, bone = int, px = float, py = float, pz = float, rx = float, ry = float, rz = float, sx = float, sy = float, sz =float, c1 = int, c2 = int}',
+    input_tip = '["ГЌГ Г§ГўГ Г­ГЁГҐ"] = {model = int, bone = int, px = float, py = float, pz = float, rx = float, ry = float, rz = float, sx = float, sy = float, sz =float, c1 = int, c2 = int}',
 }
 
 local newFrame = imgui.OnFrame(
@@ -1701,7 +1702,7 @@ local newFrame = imgui.OnFrame(
         imgui.SetCursorPos(imgui.ImVec2(115 / 2 - LogoSize.x / 2, 10))
         imgui.TextColored(ColorFloatToVec(COLORS.elements), logotext)
         imgui.PopFont()
-        imgui.Hint('logohint', u8'vAcs\nVisual Accessories (MIMGUI version)\nВерсия: '..thisScript().version..u8'\nАвтор: chapo')
+        imgui.Hint('logohint', u8'vAcs\nVisual Accessories (MIMGUI version)\nГ‚ГҐГ°Г±ГЁГї: '..thisScript().version..u8'\nГЂГўГІГ®Г°: chapo')
         
 
         imgui.PushFont(font[14].r)
@@ -1723,7 +1724,7 @@ local newFrame = imgui.OnFrame(
 
         --imgui.SameLine()
         --imgui.SetCursorPosY(imgui.GetCursorPosY() - 5)
-        --imgui.Checkbox(u8'Отображать аксессуары', imgui.new.bool(true))
+        --imgui.Checkbox(u8'ГЋГІГ®ГЎГ°Г Г¦Г ГІГј Г ГЄГ±ГҐГ±Г±ГіГ Г°Г»', imgui.new.bool(true))
         
 
         imgui.SetCursorPos(imgui.ImVec2(imgui.GetWindowSize().x - 30, 15 + 10))
@@ -1738,16 +1739,16 @@ local newFrame = imgui.OnFrame(
         --==[ NAVIGATION ]==--
         imgui.SetCursorPos(imgui.ImVec2(15, 55))
         if navigation.current == 1 then
-            imgui.MUI():Navigation(u8'Слот', selected[1], {u8'Голова', u8'Лицо', u8'Рука', u8'Грудь', u8'Плечо', u8'Спина', u8'Кейс'}, imgui.ImVec2(100, size.y - 65))
+            imgui.MUI():Navigation(u8'Г‘Г«Г®ГІ', selected[1], {u8'ГѓГ®Г«Г®ГўГ ', u8'Г‹ГЁГ¶Г®', u8'ГђГіГЄГ ', u8'ГѓГ°ГіГ¤Гј', u8'ГЏГ«ГҐГ·Г®', u8'Г‘ГЇГЁГ­Г ', u8'ГЉГҐГ©Г±'}, imgui.ImVec2(100, size.y - 65))
             
 
             local acsChildSize = imgui.ImVec2(size.x - 100 - 15 - 15, size.y - 65)
             imgui.SetCursorPos(imgui.ImVec2(100 + 15, 55))
-            imgui.FunctionChild(u8'Аксессуар', u8'Выберите аксессуар', nil, acsChildSize, nil)
+            imgui.FunctionChild(u8'ГЂГЄГ±ГҐГ±Г±ГіГ Г°', u8'Г‚Г»ГЎГҐГ°ГЁГІГҐ Г ГЄГ±ГҐГ±Г±ГіГ Г°', nil, acsChildSize, nil)
                 local slot = selected[1][0] - 1
                
-                if imgui.Selectable(u8'Нет', ACS[slot].item == 'none') then ACS[slot].item = 'none' vACS():Apply() end
-                --imgui.Hint('none_acs_tip', u8'Если выбран данный пункт, то на вашем персонаже будут отображатся серверные аксы\n(некоторые серверные аксы все ровно не будут отображаться)')
+                if imgui.Selectable(u8'ГЌГҐГІ', ACS[slot].item == 'none') then ACS[slot].item = 'none' vACS():Apply() end
+                --imgui.Hint('none_acs_tip', u8'Г…Г±Г«ГЁ ГўГ»ГЎГ°Г Г­ Г¤Г Г­Г­Г»Г© ГЇГіГ­ГЄГІ, ГІГ® Г­Г  ГўГ ГёГҐГ¬ ГЇГҐГ°Г±Г®Г­Г Г¦ГҐ ГЎГіГ¤ГіГІ Г®ГІГ®ГЎГ°Г Г¦Г ГІГ±Гї Г±ГҐГ°ГўГҐГ°Г­Г»ГҐ Г ГЄГ±Г»\n(Г­ГҐГЄГ®ГІГ®Г°Г»ГҐ Г±ГҐГ°ГўГҐГ°Г­Г»ГҐ Г ГЄГ±Г» ГўГ±ГҐ Г°Г®ГўГ­Г® Г­ГҐ ГЎГіГ¤ГіГІ Г®ГІГ®ГЎГ°Г Г¦Г ГІГјГ±Гї)')
                 if acs[slot] then
                     for index, v in ipairs(acs_list[slot]) do
                         local k = v.item
@@ -1759,7 +1760,7 @@ local newFrame = imgui.OnFrame(
                                 vACS():Apply()
                             end
                             if k:match('%[CUSTOM%](.+)') then
-                                imgui.Hint('cutomacstip'..k, u8'Кастомный предмет.\nДля удаления нажмите ПКМ')
+                                imgui.Hint('cutomacstip'..k, u8'ГЉГ Г±ГІГ®Г¬Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ.\nГ„Г«Гї ГіГ¤Г Г«ГҐГ­ГЁГї Г­Г Г¦Г¬ГЁГІГҐ ГЏГЉГЊ')
                             end
                             if imgui.IsItemClicked(1) then
                                 imgui.OpenPopup('ACSMENU_ITEM_SUBMENU:'..k)
@@ -1767,7 +1768,7 @@ local newFrame = imgui.OnFrame(
                             if imgui.BeginPopup('ACSMENU_ITEM_SUBMENU:'..k) then
                                 imgui.Text(k)
                                 imgui.Separator()
-                                if imgui.Button(u8'Изменить параметры', imgui.ImVec2(200, 24)) then
+                                if imgui.Button(u8'Г€Г§Г¬ГҐГ­ГЁГІГј ГЇГ Г°Г Г¬ГҐГІГ°Г»', imgui.ImVec2(200, 24)) then
                                     if ACS[slot].item == k then
                                         for k, v in pairs(acs[slot][k]) do
                                             if type(EDITOR[k]) == 'table' then
@@ -1781,29 +1782,29 @@ local newFrame = imgui.OnFrame(
                                         EDITOR.slot[0] = slot
                                         EDITOR.win[0] = true
                                         if menu.state then menu.switch() end
-                                        msg('Вы вошли в режим редактирования!\nПосле сохранения настроек предмет будет добавлен в слот '..u8:decode(SLOTS_NAMES[slot])..'(старый предмет останется)', toast.TYPE.INFO,  true)
+                                        msg('Г‚Г» ГўГ®ГёГ«ГЁ Гў Г°ГҐГ¦ГЁГ¬ Г°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГї!\nГЏГ®Г±Г«ГҐ Г±Г®ГµГ°Г Г­ГҐГ­ГЁГї Г­Г Г±ГІГ°Г®ГҐГЄ ГЇГ°ГҐГ¤Г¬ГҐГІ ГЎГіГ¤ГҐГІ Г¤Г®ГЎГ ГўГ«ГҐГ­ Гў Г±Г«Г®ГІ '..u8:decode(SLOTS_NAMES[slot])..'(Г±ГІГ Г°Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ Г®Г±ГІГ Г­ГҐГІГ±Гї)', toast.TYPE.INFO,  true)
                                     else
-                                        msg('Для редактирования предмета необходимо его выбрать!', toast.TYPE.INFO, true)
+                                        msg('Г„Г«Гї Г°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГї ГЇГ°ГҐГ¤Г¬ГҐГІГ  Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® ГҐГЈГ® ГўГ»ГЎГ°Г ГІГј!', toast.TYPE.INFO, true)
                                     end
                                 end
                                 if k:find('%[CUSTOM%](.+)') or k:find('%[EDITED%](.+)') then
-                                    if imgui.Button(u8'Переименовать', imgui.ImVec2(200, 24)) then
-                                        imgui.OpenPopup(u8'Переименование')
+                                    if imgui.Button(u8'ГЏГҐГ°ГҐГЁГ¬ГҐГ­Г®ГўГ ГІГј', imgui.ImVec2(200, 24)) then
+                                        imgui.OpenPopup(u8'ГЏГҐГ°ГҐГЁГ¬ГҐГ­Г®ГўГ Г­ГЁГҐ')
                                         RENAME.win[0] = true
                                         imgui.CloseCurrentPopup()
                                     end
                                     
                                     
-                                    if imgui.Button(u8'Скопировать параметры', imgui.ImVec2(200, 24)) then
+                                    if imgui.Button(u8'Г‘ГЄГ®ГЇГЁГ°Г®ГўГ ГІГј ГЇГ Г°Г Г¬ГҐГІГ°Г»', imgui.ImVec2(200, 24)) then
                                         -- vACS():GenerateItemTable(slot, item)
                                         -- vACS():GetItemJson(slot, item)
                                         setClipboardText(vACS():GenerateItemTable(slot, k))
-                                        msg('Параметры скопированы в буфур обмена! (для вставки нажмите CTRL + V)', toast.TYPE.OK, true)
+                                        msg('ГЏГ Г°Г Г¬ГҐГІГ°Г» Г±ГЄГ®ГЇГЁГ°Г®ГўГ Г­Г» Гў ГЎГіГґГіГ° Г®ГЎГ¬ГҐГ­Г ! (Г¤Г«Гї ГўГ±ГІГ ГўГЄГЁ Г­Г Г¦Г¬ГЁГІГҐ CTRL + V)', toast.TYPE.OK, true)
                                         imgui.CloseCurrentPopup()
                                     end
                                     
                                     if ACS[slot].item == k then
-                                        if imgui.Button(u8'Удалить', imgui.ImVec2(200, 24)) then
+                                        if imgui.Button(u8'Г“Г¤Г Г«ГЁГІГј', imgui.ImVec2(200, 24)) then
                                             local s_slot = tostring(slot)
                                             if custom_acs[s_slot] ~= nil then
                                                 if custom_acs[s_slot][k] ~= nil then
@@ -1811,25 +1812,25 @@ local newFrame = imgui.OnFrame(
                                                         if ACS[slot].item == k then
                                                             ACS[slot].item = 'none'
                                                             vACS():Clear(slot)
-                                                            msg('Выбранный предмет для слота '..s_slot..' был сброшен!', toast.TYPE.WARN, true)
+                                                            msg('Г‚Г»ГЎГ°Г Г­Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ Г¤Г«Гї Г±Г«Г®ГІГ  '..s_slot..' ГЎГ»Г« Г±ГЎГ°Г®ГёГҐГ­!', toast.TYPE.WARN, true)
                                                         end
                                                     end
                                                     acs[slot][k] = nil
                                                     custom_acs[s_slot][k] = nil
                                                     json(JSON_FILES.custom_acs):Save(custom_acs)
-                                                    msg('Кастомный предмет "'..u8:decode(k)..'" удален!', toast.TYPE.OK)
+                                                    msg('ГЉГ Г±ГІГ®Г¬Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ "'..u8:decode(k)..'" ГіГ¤Г Г«ГҐГ­!', toast.TYPE.OK)
                                                     ACS[slot].item = 'none'
                                                     initCustomAcs()
                                                     imgui.CloseCurrentPopup()
                                                 else
-                                                    msg('Аксессуар не найден', toast.TYPE.ERROR, true)
+                                                    msg('ГЂГЄГ±ГҐГ±Г±ГіГ Г° Г­ГҐ Г­Г Г©Г¤ГҐГ­', toast.TYPE.ERROR, true)
                                                 end
                                             else
-                                                msg('Слот не найден в custom_acs (попробуйте перезагрузить скрипт)', toast.TYPE.ERROR, true)
+                                                msg('Г‘Г«Г®ГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­ Гў custom_acs (ГЇГ®ГЇГ°Г®ГЎГіГ©ГІГҐ ГЇГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЁГІГј Г±ГЄГ°ГЁГЇГІ)', toast.TYPE.ERROR, true)
                                             end
                                         end
                                     else
-                                        msg('Для удаления предмета необходимо его выбрать!', toast.TYPE.INFO, true)
+                                        msg('Г„Г«Гї ГіГ¤Г Г«ГҐГ­ГЁГї ГЇГ°ГҐГ¤Г¬ГҐГІГ  Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® ГҐГЈГ® ГўГ»ГЎГ°Г ГІГј!', toast.TYPE.INFO, true)
                                     end
                                 end
                                 imgui.EndPopup()
@@ -1846,7 +1847,7 @@ local newFrame = imgui.OnFrame(
                                     vACS():Apply()
                                 end
                                 if k:match('%[CUSTOM%](.+)') then
-                                    imgui.Hint('cutomacstip'..k, u8'Кастомный предмет.\nДля удаления нажмите ПКМ')
+                                    imgui.Hint('cutomacstip'..k, u8'ГЉГ Г±ГІГ®Г¬Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ.\nГ„Г«Гї ГіГ¤Г Г«ГҐГ­ГЁГї Г­Г Г¦Г¬ГЁГІГҐ ГЏГЉГЊ')
                                 end
                                 if imgui.IsItemClicked(1) then
                                     imgui.OpenPopup('ACSMENU_ITEM_SUBMENU:'..k)
@@ -1855,7 +1856,7 @@ local newFrame = imgui.OnFrame(
                             if imgui.BeginPopup('ACSMENU_ITEM_SUBMENU:'..k) then
                                 imgui.Text(k)
                                 imgui.Separator()
-                                if imgui.Button(u8'Изменить параметры', imgui.ImVec2(200, 24)) then
+                                if imgui.Button(u8'Г€Г§Г¬ГҐГ­ГЁГІГј ГЇГ Г°Г Г¬ГҐГІГ°Г»', imgui.ImVec2(200, 24)) then
                                     if ACS[slot].item == k then
                                         for k, v in pairs(acs[slot][k]) do
                                             if type(EDITOR[k]) == 'table' then
@@ -1869,46 +1870,46 @@ local newFrame = imgui.OnFrame(
                                         EDITOR.slot[0] = slot
                                         EDITOR.win[0] = true
                                         if menu.state then menu.switch() end
-                                        msg('Вы вошли в режим редактирования!\nПосле сохранения настроек предмет будет добавлен в слот '..u8:decode(SLOTS_NAMES[slot])..'(старый предмет останется)', toast.TYPE.INFO,  true)
+                                        msg('Г‚Г» ГўГ®ГёГ«ГЁ Гў Г°ГҐГ¦ГЁГ¬ Г°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГї!\nГЏГ®Г±Г«ГҐ Г±Г®ГµГ°Г Г­ГҐГ­ГЁГї Г­Г Г±ГІГ°Г®ГҐГЄ ГЇГ°ГҐГ¤Г¬ГҐГІ ГЎГіГ¤ГҐГІ Г¤Г®ГЎГ ГўГ«ГҐГ­ Гў Г±Г«Г®ГІ '..u8:decode(SLOTS_NAMES[slot])..'(Г±ГІГ Г°Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ Г®Г±ГІГ Г­ГҐГІГ±Гї)', toast.TYPE.INFO,  true)
                                     else
-                                        msg('Для редактирования предмета необходимо его выбрать!', toast.TYPE.INFO, true)
+                                        msg('Г„Г«Гї Г°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГї ГЇГ°ГҐГ¤Г¬ГҐГІГ  Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® ГҐГЈГ® ГўГ»ГЎГ°Г ГІГј!', toast.TYPE.INFO, true)
                                     end
                                 end
                                 if k:match('%[CUSTOM%](.+)') then
-                                    if imgui.Button(u8'Переименовать', imgui.ImVec2(200, 24)) then
-                                        imgui.OpenPopup(u8'Переименование')
+                                    if imgui.Button(u8'ГЏГҐГ°ГҐГЁГ¬ГҐГ­Г®ГўГ ГІГј', imgui.ImVec2(200, 24)) then
+                                        imgui.OpenPopup(u8'ГЏГҐГ°ГҐГЁГ¬ГҐГ­Г®ГўГ Г­ГЁГҐ')
                                         RENAME.win[0] = true
                                         imgui.CloseCurrentPopup()
                                     end
 
-                                    if imgui.Button(u8'Скопировать параметры', imgui.ImVec2(200, 24)) then
+                                    if imgui.Button(u8'Г‘ГЄГ®ГЇГЁГ°Г®ГўГ ГІГј ГЇГ Г°Г Г¬ГҐГІГ°Г»', imgui.ImVec2(200, 24)) then
                                         -- vACS():GenerateItemTable(slot, item)
                                         -- vACS():GetItemJson(slot, item)
                                         setClipboardText(vACS():GenerateItemTable(slot, k))
-                                        msg('Параметры скопированы в буфур обмена! (для вставки нажмите CTRL + V)', toast.TYPE.OK, true)
+                                        msg('ГЏГ Г°Г Г¬ГҐГІГ°Г» Г±ГЄГ®ГЇГЁГ°Г®ГўГ Г­Г» Гў ГЎГіГґГіГ° Г®ГЎГ¬ГҐГ­Г ! (Г¤Г«Гї ГўГ±ГІГ ГўГЄГЁ Г­Г Г¦Г¬ГЁГІГҐ CTRL + V)', toast.TYPE.OK, true)
                                         imgui.CloseCurrentPopup()
                                     end
 
-                                    if imgui.Button(u8'Удалить', imgui.ImVec2(200, 24)) then
+                                    if imgui.Button(u8'Г“Г¤Г Г«ГЁГІГј', imgui.ImVec2(200, 24)) then
                                         if custom_acs[slot] ~= nil then
                                             if custom_acs[slot][k] ~= nil then
                                                 if ACS[slot] then
                                                     if ACS[slot].item == k then
                                                         ACS[slot].item = 'none'
                                                         vACS():Clear(slot)
-                                                        msg('Выбранный предмет для слота '..slot..' был сброшен!', toast.TYPE.WARN, true)
+                                                        msg('Г‚Г»ГЎГ°Г Г­Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ Г¤Г«Гї Г±Г«Г®ГІГ  '..slot..' ГЎГ»Г« Г±ГЎГ°Г®ГёГҐГ­!', toast.TYPE.WARN, true)
                                                     end
                                                 end
                                                 acs[slot][k] = nil
                                                 custom_acs[slot][k] = nil
                                                 json('vACS_custom_acs.json'):Save(custom_acs)
-                                                toast.Show(u8'Кастомный предмет "'..u8:decode(k)..'" удален!', toast.TYPE.OK, 2.5)
+                                                toast.Show(u8'ГЉГ Г±ГІГ®Г¬Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ "'..u8:decode(k)..'" ГіГ¤Г Г«ГҐГ­!', toast.TYPE.OK, 2.5)
                                                 imgui.CloseCurrentPopup()
                                             else
-                                                msg('Аксессуар не найден', toast.TYPE.ERROR, true)
+                                                msg('ГЂГЄГ±ГҐГ±Г±ГіГ Г° Г­ГҐ Г­Г Г©Г¤ГҐГ­', toast.TYPE.ERROR, true)
                                             end
                                         else
-                                            msg('Слот не найден в custom_acs (попробуйте перезагрузить скрипт)', toast.TYPE.ERROR, true)
+                                            msg('Г‘Г«Г®ГІ Г­ГҐ Г­Г Г©Г¤ГҐГ­ Гў custom_acs (ГЇГ®ГЇГ°Г®ГЎГіГ©ГІГҐ ГЇГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЁГІГј Г±ГЄГ°ГЁГЇГІ)', toast.TYPE.ERROR, true)
                                         end
                                     end
                                 end
@@ -1923,7 +1924,7 @@ local newFrame = imgui.OnFrame(
             imgui.PopStyleColor()
 
             imgui.SetCursorPos(imgui.ImVec2(5, size.y - 85))
-            imgui.Text(u8'Цвет:')
+            imgui.Text(u8'Г–ГўГҐГІ:')
             imgui.BeginChild('COLOR', imgui.ImVec2(105, 55), false)
             imgui.SetCursorPos(imgui.ImVec2(5, 5))
             for k, v in ipairs(color_list_data) do
@@ -1953,9 +1954,9 @@ local newFrame = imgui.OnFrame(
             imgui.PushStyleColor(imgui.Col.FrameBgActive, ColorFloatToVec(COLORS.back))
 
             imgui.SetCursorPosX(size.x - 100 - 75)
-            --imgui.Checkbox(u8'Отображать аксессуары', imgui.new.bool(true))
+            --imgui.Checkbox(u8'ГЋГІГ®ГЎГ°Г Г¦Г ГІГј Г ГЄГ±ГҐГ±Г±ГіГ Г°Г»', imgui.new.bool(true))
             --imgui.SameLine(size.x - 100 - 75) 
-            imgui.Text(u8'Поиск:') imgui.SameLine() 
+            imgui.Text(u8'ГЏГ®ГЁГ±ГЄ:') imgui.SameLine() 
             imgui.PushItemWidth(100) imgui.InputText('##ACS_SEARCH', ACS_SEARCH, 128) imgui.PopItemWidth()
             imgui.PopStyleColor(3)
         elseif navigation.current == 2 then
@@ -1964,7 +1965,7 @@ local newFrame = imgui.OnFrame(
             --imgui.PushStyleColor(imgui.Col.FrameBg, imgui.ImVec4(0.1, 0.13, 0.17, 1)) -- CRASH
             --imgui.PushStyleColor(imgui.Col.FrameBgHovered, imgui.ImVec4(0.1, 0.13, 0.17, 1)) -- CRASH
             --imgui.PushStyleColor(imgui.Col.FrameBgActive, imgui.ImVec4(0.1, 0.13, 0.17, 1)) -- CRASH
-            imgui.FunctionChild(u8'Скин', u8'Модель персонажа (server skin: '..tostring(SKIN.SERVER_SKIN)..')', SKIN.SkinChanger, cSize, function()
+            imgui.FunctionChild(u8'Г‘ГЄГЁГ­', u8'ГЊГ®Г¤ГҐГ«Гј ГЇГҐГ°Г±Г®Г­Г Г¦Г  (server skin: '..tostring(SKIN.SERVER_SKIN)..')', SKIN.SkinChanger, cSize, function()
                 vACS():SetSkin(SKIN.SkinChanger[0] and SKIN.model[0] or SKIN.SERVER_SKIN)
                 msg('callback')
             end)
@@ -1992,8 +1993,8 @@ local newFrame = imgui.OnFrame(
 
             local c2Size = imgui.ImVec2(size.x - (size.x / 1.5) - 15 * 3, (size.y - 60) / 2 - 10)
             imgui.SetCursorPos(imgui.ImVec2(15 + cSize.x + 15, 55))
-            imgui.FunctionChild(u8'Ходьба', u8'Стиль ходьбы', nil, c2Size, nil)
-                if imgui.Selectable(u8'Не изменять', SKIN.walk == 'none') then 
+            imgui.FunctionChild(u8'Г•Г®Г¤ГјГЎГ ', u8'Г‘ГІГЁГ«Гј ГµГ®Г¤ГјГЎГ»', nil, c2Size, nil)
+                if imgui.Selectable(u8'ГЌГҐ ГЁГ§Г¬ГҐГ­ГїГІГј', SKIN.walk == 'none') then 
                     SKIN.walk = 'none'
                     vACS():SetWalkStyle(SKIN.walk)
                 end
@@ -2002,14 +2003,14 @@ local newFrame = imgui.OnFrame(
                         SKIN.walk = k 
                         vACS():Apply()
                     end
-                    if k:find(u8'Роллер') then
-                        imgui.Hint('ROLLER_WARN', u8'ВНИМАНИЕ! ПОСЛЕ ВЫБОРА ЭТОГО СТИЛЯ ХОДЬБЫ ИГРА МОЖЕТ КРАШНУТСЯ (а может и не крашнутся), Я НЕ ЕБУ КАК ЭТО ФИКСИТЬ!!!')
+                    if k:find(u8'ГђГ®Г«Г«ГҐГ°') then
+                        imgui.Hint('ROLLER_WARN', u8'Г‚ГЌГ€ГЊГЂГЌГ€Г…! ГЏГЋГ‘Г‹Г… Г‚Г›ГЃГЋГђГЂ ГќГ’ГЋГѓГЋ Г‘Г’Г€Г‹Гџ Г•ГЋГ„ГњГЃГ› Г€ГѓГђГЂ ГЊГЋГ†Г…Г’ ГЉГђГЂГГЌГ“Г’Г‘Гџ (Г  Г¬Г®Г¦ГҐГІ ГЁ Г­ГҐ ГЄГ°Г ГёГ­ГіГІГ±Гї), Гџ ГЌГ… Г…ГЃГ“ ГЉГЂГЉ ГќГ’ГЋ Г”Г€ГЉГ‘Г€Г’Гњ!!!')
                     end
                 end
             imgui.EndChild()
             imgui.PopStyleColor()
             imgui.SetCursorPos(imgui.ImVec2(15 + cSize.x + 15, 55 + c2Size.y + 15))
-            imgui.FunctionChild(u8'Бой', u8'Стиль боя (ПКМ + F)', nil, c2Size, nil)
+            imgui.FunctionChild(u8'ГЃГ®Г©', u8'Г‘ГІГЁГ«Гј ГЎГ®Гї (ГЏГЉГЊ + F)', nil, c2Size, nil)
                 for k, v in pairs(SKIN.list_fight) do
                     if imgui.Selectable(k, SKIN.fight == k) then 
                         SKIN.fight = k 
@@ -2021,51 +2022,51 @@ local newFrame = imgui.OnFrame(
         elseif navigation.current == 3 then
 
             imgui.SetCursorPos(imgui.ImVec2(15 + 240 + 15, 55))
-            imgui.FunctionChild(u8'Добавить аксессуар', u8'Добавьте любой аксессуар!', nil, imgui.ImVec2(size.x - 15 - 240 - 15 - 15, size.y - 55 - 15), nil)
+            imgui.FunctionChild(u8'Г„Г®ГЎГ ГўГЁГІГј Г ГЄГ±ГҐГ±Г±ГіГ Г°', u8'Г„Г®ГЎГ ГўГјГІГҐ Г«ГѕГЎГ®Г© Г ГЄГ±ГҐГ±Г±ГіГ Г°!', nil, imgui.ImVec2(size.x - 15 - 240 - 15 - 15, size.y - 55 - 15), nil)
                 imgui.PushStyleColor(imgui.Col.FrameBg, COLOR_BACK)
                 imgui.PushStyleColor(imgui.Col.FrameBgHovered, COLOR_BACK)
                 imgui.PushStyleColor(imgui.Col.FrameBgActive, COLOR_BACK)
                 --print(COLOR_ELEMENTS.x, COLOR_ELEMENTS.y)
 
-                imgui.Text(u8'Введите название')
+                imgui.Text(u8'Г‚ГўГҐГ¤ГЁГІГҐ Г­Г Г§ГўГ Г­ГЁГҐ')
                 imgui.PushItemWidth(size.x - 15 - 240 - 15 - 15 - 20)
                 imgui.InputText('##ADD_CUSTOM.name_input', ADD_CUSTOM.name_input, 128)
                 imgui.PopItemWidth()
 
 
-                imgui.Text(u8'Введите данные аксессуара')
+                imgui.Text(u8'Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г Г­Г­Г»ГҐ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г ')
                 imgui.PushItemWidth(size.x - 15 - 240 - 15 - 15 - 20)
                 imgui.InputText('##ADD_CUSTOM.input', ADD_CUSTOM.input, 512)
                 imgui.PopItemWidth()
                 if imgui.IsItemHovered() then
-                    imgui.Hint('ADD_CUSTOM.input tip', u8'Введите данные акса в формате:\n'..u8(ADD_CUSTOM.example), 0)
+                    imgui.Hint('ADD_CUSTOM.input tip', u8'Г‚ГўГҐГ¤ГЁГІГҐ Г¤Г Г­Г­Г»ГҐ Г ГЄГ±Г  Гў ГґГ®Г°Г¬Г ГІГҐ:\n'..u8(ADD_CUSTOM.example), 0)
                 end
                 local slots_list = {
-                    [0] = u8'Голова', 
-                    [1] = u8'Лицо', 
-                    [2] = u8'Рука', 
-                    [3] = u8'Грудь', 
-                    [4] = u8'Плечо', 
-                    [5] = u8'Спина',
-                    [6] = u8'Кейс'
+                    [0] = u8'ГѓГ®Г«Г®ГўГ ', 
+                    [1] = u8'Г‹ГЁГ¶Г®', 
+                    [2] = u8'ГђГіГЄГ ', 
+                    [3] = u8'ГѓГ°ГіГ¤Гј', 
+                    [4] = u8'ГЏГ«ГҐГ·Г®', 
+                    [5] = u8'Г‘ГЇГЁГ­Г ',
+                    [6] = u8'ГЉГҐГ©Г±'
                 }
 
-                if imgui.RadioButtonBool(u8'Голова', ADD_CUSTOM.slot[0] == 0) then ADD_CUSTOM.slot[0] = 0 end
+                if imgui.RadioButtonBool(u8'ГѓГ®Г«Г®ГўГ ', ADD_CUSTOM.slot[0] == 0) then ADD_CUSTOM.slot[0] = 0 end
                 imgui.SameLine(150)
-                if imgui.RadioButtonBool(u8'Лицо', ADD_CUSTOM.slot[0] == 1) then ADD_CUSTOM.slot[0] = 1 end
+                if imgui.RadioButtonBool(u8'Г‹ГЁГ¶Г®', ADD_CUSTOM.slot[0] == 1) then ADD_CUSTOM.slot[0] = 1 end
                 imgui.SameLine(300)
-                if imgui.RadioButtonBool(u8'Рука', ADD_CUSTOM.slot[0] == 2) then ADD_CUSTOM.slot[0] = 2 end
+                if imgui.RadioButtonBool(u8'ГђГіГЄГ ', ADD_CUSTOM.slot[0] == 2) then ADD_CUSTOM.slot[0] = 2 end
 
-                if imgui.RadioButtonBool(u8'Грудь', ADD_CUSTOM.slot[0] == 3) then ADD_CUSTOM.slot[0] = 3 end
+                if imgui.RadioButtonBool(u8'ГѓГ°ГіГ¤Гј', ADD_CUSTOM.slot[0] == 3) then ADD_CUSTOM.slot[0] = 3 end
                 imgui.SameLine(150)
-                if imgui.RadioButtonBool(u8'Плечо', ADD_CUSTOM.slot[0] == 4) then ADD_CUSTOM.slot[0] = 4 end
+                if imgui.RadioButtonBool(u8'ГЏГ«ГҐГ·Г®', ADD_CUSTOM.slot[0] == 4) then ADD_CUSTOM.slot[0] = 4 end
                 imgui.SameLine(300)
-                if imgui.RadioButtonBool(u8'Спина', ADD_CUSTOM.slot[0] == 5) then ADD_CUSTOM.slot[0] = 5 end
+                if imgui.RadioButtonBool(u8'Г‘ГЇГЁГ­Г ', ADD_CUSTOM.slot[0] == 5) then ADD_CUSTOM.slot[0] = 5 end
 
-                if imgui.RadioButtonBool(u8'Кейс', ADD_CUSTOM.slot[0] == 6) then ADD_CUSTOM.slot[0] = 6 end
+                if imgui.RadioButtonBool(u8'ГЉГҐГ©Г±', ADD_CUSTOM.slot[0] == 6) then ADD_CUSTOM.slot[0] = 6 end
 
                 imgui.SetCursorPos(imgui.ImVec2(5, size.y - 55 - 55 - 15 -25))
-                if imgui.ButtonWithSettings(u8'Добавить', {color = (ffi.string(ADD_CUSTOM.input):match(ADD_CUSTOM.pattern) and imgui.GetStyle().Colors[imgui.Col.Button] or imgui.GetStyle().Colors[imgui.Col.ButtonActive])}, imgui.ImVec2(size.x - 15 - 240 - 15 - 15 - 20 - 5, 24)) then
+                if imgui.ButtonWithSettings(u8'Г„Г®ГЎГ ГўГЁГІГј', {color = (ffi.string(ADD_CUSTOM.input):match(ADD_CUSTOM.pattern) and imgui.GetStyle().Colors[imgui.Col.Button] or imgui.GetStyle().Colors[imgui.Col.ButtonActive])}, imgui.ImVec2(size.x - 15 - 240 - 15 - 15 - 20 - 5, 24)) then
                 
 
                     if ffi.string(ADD_CUSTOM.input):match(ADD_CUSTOM.pattern) then
@@ -2092,32 +2093,32 @@ local newFrame = imgui.OnFrame(
                         json(JSON_FILES.custom_acs):Save(custom_acs)
                         custom_acs = json(JSON_FILES.custom_acs):Load({})
                         initCustomAcs()
-                        msg('Аксессуар "[CUSTOM] '..u8:decode(ffi.string(ADD_CUSTOM.name_input))..'" был добавлен в раздел "'..u8:decode(slots_list[ADD_CUSTOM.slot[0]])..' ('..tostring(ADD_CUSTOM.slot[0])..')" и сохранен в конфиг!', toast.TYPE.OK, true)
+                        msg('ГЂГЄГ±ГҐГ±Г±ГіГ Г° "[CUSTOM] '..u8:decode(ffi.string(ADD_CUSTOM.name_input))..'" ГЎГ»Г« Г¤Г®ГЎГ ГўГ«ГҐГ­ Гў Г°Г Г§Г¤ГҐГ« "'..u8:decode(slots_list[ADD_CUSTOM.slot[0]])..' ('..tostring(ADD_CUSTOM.slot[0])..')" ГЁ Г±Г®ГµГ°Г Г­ГҐГ­ Гў ГЄГ®Г­ГґГЁГЈ!', toast.TYPE.OK, true)
                         
                     else
-                        msg('Ошибка, введенные данные не соответствуют шаблону!', toast.TYPE.ERROR, true)
+                        msg('ГЋГёГЁГЎГЄГ , ГўГўГҐГ¤ГҐГ­Г­Г»ГҐ Г¤Г Г­Г­Г»ГҐ Г­ГҐ Г±Г®Г®ГІГўГҐГІГ±ГІГўГіГѕГІ ГёГ ГЎГ«Г®Г­Гі!', toast.TYPE.ERROR, true)
                     end
                 end
-                imgui.Hint('incorrectpattern', ffi.string(ADD_CUSTOM.input):match(ADD_CUSTOM.pattern) and u8'Вы можете добавить этот аксессуар!' or u8'Ошибка, введенные данные не соответствуют шаблону!', 0)
+                imgui.Hint('incorrectpattern', ffi.string(ADD_CUSTOM.input):match(ADD_CUSTOM.pattern) and u8'Г‚Г» Г¬Г®Г¦ГҐГІГҐ Г¤Г®ГЎГ ГўГЁГІГј ГЅГІГ®ГІ Г ГЄГ±ГҐГ±Г±ГіГ Г°!' or u8'ГЋГёГЁГЎГЄГ , ГўГўГҐГ¤ГҐГ­Г­Г»ГҐ Г¤Г Г­Г­Г»ГҐ Г­ГҐ Г±Г®Г®ГІГўГҐГІГ±ГІГўГіГѕГІ ГёГ ГЎГ«Г®Г­Гі!', 0)
                 imgui.PopStyleColor(3)
 
             imgui.EndChild()
             imgui.PopStyleColor()
             
             imgui.SetCursorPos(imgui.ImVec2(15, 55))
-            imgui.FunctionChild(u8'Свои аксессуары', u8'Что это?!', nil, imgui.ImVec2(240, 85), nil)
-                imgui.TextWrapped(u8'В этой вкладке вы сможете добавлять в скрипт свои аксессуары')
+            imgui.FunctionChild(u8'Г‘ГўГ®ГЁ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г»', u8'Г—ГІГ® ГЅГІГ®?!', nil, imgui.ImVec2(240, 85), nil)
+                imgui.TextWrapped(u8'Г‚ ГЅГІГ®Г© ГўГЄГ«Г Г¤ГЄГҐ ГўГ» Г±Г¬Г®Г¦ГҐГІГҐ Г¤Г®ГЎГ ГўГ«ГїГІГј Гў Г±ГЄГ°ГЁГЇГІ Г±ГўГ®ГЁ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г»')
             imgui.EndChild()
             imgui.PopStyleColor()
 
             imgui.SetCursorPos(imgui.ImVec2(15, 55 + 15 + 85))
-            imgui.FunctionChild(u8'Получение аксессуаров', u8'Как получить данные?', nil, imgui.ImVec2(240, size.y - 55 - 15 - 15 - 85), nil)
-                imgui.TextWrapped(u8'Для добавления своего аксессуара необходимо открыть окно трекера, выбрать нужный объект, нажать на него и вставить в поле ввода')
-                if imgui.Button((TRACKER.win[0] and u8'Закрыть' or u8'Открыть') .. u8' трекер', imgui.ImVec2(220, 24)) then
+            imgui.FunctionChild(u8'ГЏГ®Г«ГіГ·ГҐГ­ГЁГҐ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г®Гў', u8'ГЉГ ГЄ ГЇГ®Г«ГіГ·ГЁГІГј Г¤Г Г­Г­Г»ГҐ?', nil, imgui.ImVec2(240, size.y - 55 - 15 - 15 - 85), nil)
+                imgui.TextWrapped(u8'Г„Г«Гї Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГї Г±ГўГ®ГҐГЈГ® Г ГЄГ±ГҐГ±Г±ГіГ Г°Г  Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® Г®ГІГЄГ°Г»ГІГј Г®ГЄГ­Г® ГІГ°ГҐГЄГҐГ°Г , ГўГ»ГЎГ°Г ГІГј Г­ГіГ¦Г­Г»Г© Г®ГЎГєГҐГЄГІ, Г­Г Г¦Г ГІГј Г­Г  Г­ГҐГЈГ® ГЁ ГўГ±ГІГ ГўГЁГІГј Гў ГЇГ®Г«ГҐ ГўГўГ®Г¤Г ')
+                if imgui.Button((TRACKER.win[0] and u8'Г‡Г ГЄГ°Г»ГІГј' or u8'ГЋГІГЄГ°Г»ГІГј') .. u8' ГІГ°ГҐГЄГҐГ°', imgui.ImVec2(220, 24)) then
                     TRACKER.win[0] = not TRACKER.win[0] 
                 end
-                imgui.TextWrapped(u8'Или создайте объект сами')
-                if imgui.Button(u8'Создать', imgui.ImVec2(220, 24)) then
+                imgui.TextWrapped(u8'Г€Г«ГЁ Г±Г®Г§Г¤Г Г©ГІГҐ Г®ГЎГєГҐГЄГІ Г±Г Г¬ГЁ')
+                if imgui.Button(u8'Г‘Г®Г§Г¤Г ГІГј', imgui.ImVec2(220, 24)) then
                     --TRACKER.win[0] = not TRACKER.win[0] 
                     vACS():ClearAll()
                     OBJ_CREATE.win[0] = true
@@ -2133,23 +2134,23 @@ local newFrame = imgui.OnFrame(
 
         elseif navigation.current == 4 then
             imgui.SetCursorPos(imgui.ImVec2(15 + 200 + 15, size.y - 105 - 15 + 10))
-            imgui.FunctionChild(u8'Авто-обновление', u8'Версия скрипта: '..tostring(thisScript().version), nil, imgui.ImVec2(290, 95), nil)
-                imgui.Text(u8'Последняя версия: '..tostring(LASTVER))
+            imgui.FunctionChild(u8'ГЂГўГІГ®-Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ', u8'Г‚ГҐГ°Г±ГЁГї Г±ГЄГ°ГЁГЇГІГ : '..tostring(thisScript().version), nil, imgui.ImVec2(290, 95), nil)
+                imgui.Text(u8'ГЏГ®Г±Г«ГҐГ¤Г­ГїГї ГўГҐГ°Г±ГЁГї: '..tostring(LASTVER))
                 if LASTVER ~= thisScript().version then
-                    if imgui.Button(u8'Обновить скрипт', imgui.ImVec2(180, 24)) then 
+                    if imgui.Button(u8'ГЋГЎГ­Г®ГўГЁГІГј Г±ГЄГ°ГЁГЇГІ', imgui.ImVec2(180, 24)) then 
                         update():Download(UPDATE_WINDOW.url)
                     end
                 else
-                    if imgui.Button(u8'Проверить обновления', imgui.ImVec2(180, 24)) then 
+                    if imgui.Button(u8'ГЏГ°Г®ГўГҐГ°ГЁГІГј Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї', imgui.ImVec2(180, 24)) then 
                         local updData = update():GetRawData()
                         if updData.ERROR == 'none' then
-                            msg(thisScript().version ~= updData.last and 'Доступно обновление' or 'У вас установлена последняя версия!')
+                            msg(thisScript().version ~= updData.last and 'Г„Г®Г±ГІГіГЇГ­Г® Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ' or 'Г“ ГўГ Г± ГіГ±ГІГ Г­Г®ГўГ«ГҐГ­Г  ГЇГ®Г±Г«ГҐГ¤Г­ГїГї ГўГҐГ°Г±ГЁГї!')
                         else
-                            msg('Ошибка проверки обновления :(')
+                            msg('ГЋГёГЁГЎГЄГ  ГЇГ°Г®ГўГҐГ°ГЄГЁ Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї :(')
                         end
                     end
                 end
-                --imgui.Checkbox(u8'Проверять обновления при запуске', SKIN.checkforupdates)
+                --imgui.Checkbox(u8'ГЏГ°Г®ГўГҐГ°ГїГІГј Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї ГЇГ°ГЁ Г§Г ГЇГіГ±ГЄГҐ', SKIN.checkforupdates)
             imgui.EndChild()
             imgui.PopStyleColor()
 
@@ -2158,7 +2159,7 @@ local newFrame = imgui.OnFrame(
             imgui.PushStyleColor(imgui.Col.FrameBgActive, ColorFloatToVec(COLORS.back))
                 
             imgui.SetCursorPos(imgui.ImVec2(15, 55))
-            imgui.FunctionChild(u8'Аура', u8'Отображать свечение', SKIN.glow, imgui.ImVec2(200, 50), nil, nil, true)
+            imgui.FunctionChild(u8'ГЂГіГ°Г ', u8'ГЋГІГ®ГЎГ°Г Г¦Г ГІГј Г±ГўГҐГ·ГҐГ­ГЁГҐ', SKIN.glow, imgui.ImVec2(200, 50), nil, nil, true)
            --imgui.EndChild()
            --imgui.PopStyleColor()
 
@@ -2177,15 +2178,15 @@ local newFrame = imgui.OnFrame(
                 }
 
             ]]
-            --imgui.FunctionChild(u8'Благодарности', u8'Респект челам!', nil, imgui.ImVec2(200, 80), nil)
-            --if imgui.Button(u8'Благодарности', imgui.ImVec2(180, 24)) then imgui.OpenPopup(u8'Благодарности') end
-            --imgui.Hint('bebra', u8'Спасибо @copypaste_scripter, @livingflore, @darkdakilla, @shade, и @duas за помощь в добавлении новых предметов, а так же отдельно я хотел бы поблагодарить YarikVL и FSA.')
+            --imgui.FunctionChild(u8'ГЃГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ', u8'ГђГҐГ±ГЇГҐГЄГІ Г·ГҐГ«Г Г¬!', nil, imgui.ImVec2(200, 80), nil)
+            --if imgui.Button(u8'ГЃГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ', imgui.ImVec2(180, 24)) then imgui.OpenPopup(u8'ГЃГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ') end
+            --imgui.Hint('bebra', u8'Г‘ГЇГ Г±ГЁГЎГ® @copypaste_scripter, @livingflore, @darkdakilla, @shade, ГЁ @duas Г§Г  ГЇГ®Г¬Г®Г№Гј Гў Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГЁ Г­Г®ГўГ»Гµ ГЇГ°ГҐГ¤Г¬ГҐГІГ®Гў, Г  ГІГ ГЄ Г¦ГҐ Г®ГІГ¤ГҐГ«ГјГ­Г® Гї ГµГ®ГІГҐГ« ГЎГ» ГЇГ®ГЎГ«Г ГЈГ®Г¤Г Г°ГЁГІГј YarikVL ГЁ FSA.')
             --imgui.EndChild()
             --imgui.PopStyleColor()   
              
-            --imgui.FunctionChild(u8'Благодарности', u8'Респект челам!', nil, imgui.ImVec2(200, 80), nil)
-            --    if imgui.Button(u8'Настроить', imgui.ImVec2(180, 24)) then imgui.OpenPopup(u8'Тема меню')       end
-            --    --imgui.Hint('bebra', u8'Спасибо @copypaste_scripter, @livingflore, @darkdakilla, @shade, и @duas за помощь в добавлении новых предметов, а так же отдельно я хотел бы поблагодарить YarikVL и FSA.')
+            --imgui.FunctionChild(u8'ГЃГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ', u8'ГђГҐГ±ГЇГҐГЄГІ Г·ГҐГ«Г Г¬!', nil, imgui.ImVec2(200, 80), nil)
+            --    if imgui.Button(u8'ГЌГ Г±ГІГ°Г®ГЁГІГј', imgui.ImVec2(180, 24)) then imgui.OpenPopup(u8'Г’ГҐГ¬Г  Г¬ГҐГ­Гѕ')       end
+            --    --imgui.Hint('bebra', u8'Г‘ГЇГ Г±ГЁГЎГ® @copypaste_scripter, @livingflore, @darkdakilla, @shade, ГЁ @duas Г§Г  ГЇГ®Г¬Г®Г№Гј Гў Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГЁ Г­Г®ГўГ»Гµ ГЇГ°ГҐГ¤Г¬ГҐГІГ®Гў, Г  ГІГ ГЄ Г¦ГҐ Г®ГІГ¤ГҐГ«ГјГ­Г® Гї ГµГ®ГІГҐГ« ГЎГ» ГЇГ®ГЎГ«Г ГЈГ®Г¤Г Г°ГЁГІГј YarikVL ГЁ FSA.')
             --imgui.EndChild()
             --imgui.PopStyleColor()     
 
@@ -2194,48 +2195,48 @@ local newFrame = imgui.OnFrame(
             imgui.PushStyleColor(imgui.Col.ButtonHovered,   imgui.ImVec4(COLOR_FRAME.x, COLOR_FRAME.y, COLOR_FRAME.z, 0.7))
             imgui.PushStyleColor(imgui.Col.ButtonActive,    imgui.ImVec4(COLOR_FRAME.x, COLOR_FRAME.y, COLOR_FRAME.z, 0.3))
             imgui.SetCursorPos(imgui.ImVec2(15, size.y - 29 - 10))
-            if imgui.Button(u8'Настроить меню', imgui.ImVec2(200, 24)) then imgui.OpenPopup(u8'Тема меню') end
+            if imgui.Button(u8'ГЌГ Г±ГІГ°Г®ГЁГІГј Г¬ГҐГ­Гѕ', imgui.ImVec2(200, 24)) then imgui.OpenPopup(u8'Г’ГҐГ¬Г  Г¬ГҐГ­Гѕ') end
             imgui.SetCursorPos(imgui.ImVec2(15, size.y - 29 - 10 - 24 - 10))
-            if imgui.Button( u8'Благодарности', imgui.ImVec2(200, 24)) then imgui.OpenPopup(u8'Благодарности') end
+            if imgui.Button( u8'ГЃГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ', imgui.ImVec2(200, 24)) then imgui.OpenPopup(u8'ГЃГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ') end
             imgui.PopStyleColor(3)
            
 
             imgui.SetCursorPos(imgui.ImVec2(15, 55 + 15 + 50))
-            imgui.FunctionChild(u8'Бронежилет', u8'Настройки бронежилета', nil, imgui.ImVec2(200, 135), nil)
-                if imgui.Checkbox(u8'Отображать бронежилет', SKIN.armour) then
+            imgui.FunctionChild(u8'ГЃГ°Г®Г­ГҐГ¦ГЁГ«ГҐГІ', u8'ГЌГ Г±ГІГ°Г®Г©ГЄГЁ ГЎГ°Г®Г­ГҐГ¦ГЁГ«ГҐГІГ ', nil, imgui.ImVec2(200, 135), nil)
+                if imgui.Checkbox(u8'ГЋГІГ®ГЎГ°Г Г¦Г ГІГј ГЎГ°Г®Г­ГҐГ¦ГЁГ«ГҐГІ', SKIN.armour) then
                     vACS():Apply()
                 end
-                imgui.Hint('armourtip', u8'Отображать объект бронежилета если у персонажа больше 0 брони')
-                if imgui.RadioButtonBool(u8'Обычный', SKIN.armour_type[0] == 0) then SKIN.armour_type[0] = 0 end
-                if imgui.RadioButtonBool(u8'Улучшенный', SKIN.armour_type[0] == 1) then SKIN.armour_type[0] = 1 end
+                imgui.Hint('armourtip', u8'ГЋГІГ®ГЎГ°Г Г¦Г ГІГј Г®ГЎГєГҐГЄГІ ГЎГ°Г®Г­ГҐГ¦ГЁГ«ГҐГІГ  ГҐГ±Г«ГЁ Гі ГЇГҐГ°Г±Г®Г­Г Г¦Г  ГЎГ®Г«ГјГёГҐ 0 ГЎГ°Г®Г­ГЁ')
+                if imgui.RadioButtonBool(u8'ГЋГЎГ»Г·Г­Г»Г©', SKIN.armour_type[0] == 0) then SKIN.armour_type[0] = 0 end
+                if imgui.RadioButtonBool(u8'Г“Г«ГіГ·ГёГҐГ­Г­Г»Г©', SKIN.armour_type[0] == 1) then SKIN.armour_type[0] = 1 end
             imgui.EndChild()
             imgui.PopStyleColor()
 
             imgui.SetCursorPos(imgui.ImVec2(15 + 200 + 15, 55))
-            imgui.FunctionChild(u8'Дополнительно', u8'Полезные функции', nil, imgui.ImVec2(290, 50 + 135 ), nil)
-                imgui.Checkbox(u8'Скрывать аксы и скин если камера у стены', SKIN.DisableCloseWall)
-                imgui.Hint('DisableCloseWalltip', u8'Скрывать аксы если персонаж находится рядом со стеной')
+            imgui.FunctionChild(u8'Г„Г®ГЇГ®Г«Г­ГЁГІГҐГ«ГјГ­Г®', u8'ГЏГ®Г«ГҐГ§Г­Г»ГҐ ГґГіГ­ГЄГ¶ГЁГЁ', nil, imgui.ImVec2(290, 50 + 135 ), nil)
+                imgui.Checkbox(u8'Г‘ГЄГ°Г»ГўГ ГІГј Г ГЄГ±Г» ГЁ Г±ГЄГЁГ­ ГҐГ±Г«ГЁ ГЄГ Г¬ГҐГ°Г  Гі Г±ГІГҐГ­Г»', SKIN.DisableCloseWall)
+                imgui.Hint('DisableCloseWalltip', u8'Г‘ГЄГ°Г»ГўГ ГІГј Г ГЄГ±Г» ГҐГ±Г«ГЁ ГЇГҐГ°Г±Г®Г­Г Г¦ Г­Г ГµГ®Г¤ГЁГІГ±Гї Г°ГїГ¤Г®Г¬ Г±Г® Г±ГІГҐГ­Г®Г©')
                 
-                imgui.Checkbox(u8'Скрывать кейс при прицеливании', SKIN.DisableCaseAim)
-                imgui.Hint('DisableCaseAimtip', u8'Удалять кейс во время прицеливания')
+                imgui.Checkbox(u8'Г‘ГЄГ°Г»ГўГ ГІГј ГЄГҐГ©Г± ГЇГ°ГЁ ГЇГ°ГЁГ¶ГҐГ«ГЁГўГ Г­ГЁГЁ', SKIN.DisableCaseAim)
+                imgui.Hint('DisableCaseAimtip', u8'Г“Г¤Г Г«ГїГІГј ГЄГҐГ©Г± ГўГ® ГўГ°ГҐГ¬Гї ГЇГ°ГЁГ¶ГҐГ«ГЁГўГ Г­ГЁГї')
                 
-                imgui.Checkbox(u8'Фикс скинов на роликах', SKIN.rollerfix)
-                imgui.Hint('RollerFIXtip', u8'Быстрая езда по песку и удаление разгона у скинов на роликах (автор: chapo)')
+                imgui.Checkbox(u8'Г”ГЁГЄГ± Г±ГЄГЁГ­Г®Гў Г­Г  Г°Г®Г«ГЁГЄГ Гµ', SKIN.rollerfix)
+                imgui.Hint('RollerFIXtip', u8'ГЃГ»Г±ГІГ°Г Гї ГҐГ§Г¤Г  ГЇГ® ГЇГҐГ±ГЄГі ГЁ ГіГ¤Г Г«ГҐГ­ГЁГҐ Г°Г Г§ГЈГ®Г­Г  Гі Г±ГЄГЁГ­Г®Гў Г­Г  Г°Г®Г«ГЁГЄГ Гµ (Г ГўГІГ®Г°: chapo)')
 
-                imgui.Checkbox(u8'Фикс резких поворотов скинов', SKIN.normalturn)
-                imgui.Hint('NormalTurntip', u8'Фикс резких поворотов некоторых скинов (автор: FYS)')
+                imgui.Checkbox(u8'Г”ГЁГЄГ± Г°ГҐГ§ГЄГЁГµ ГЇГ®ГўГ®Г°Г®ГІГ®Гў Г±ГЄГЁГ­Г®Гў', SKIN.normalturn)
+                imgui.Hint('NormalTurntip', u8'Г”ГЁГЄГ± Г°ГҐГ§ГЄГЁГµ ГЇГ®ГўГ®Г°Г®ГІГ®Гў Г­ГҐГЄГ®ГІГ®Г°Г»Гµ Г±ГЄГЁГ­Г®Гў (Г ГўГІГ®Г°: FYS)')
             imgui.EndChild()
             imgui.PopStyleColor()
 
             imgui.SetCursorPos(imgui.ImVec2(size.x - 15 - 150, 55))
-            imgui.FunctionChild(u8'Скрипт', u8'Управление скриптом', nil, imgui.ImVec2(150, 110), nil)
-                imgui.SetCursorPosX(5) if imgui.Button(u8'Перезагрузить', imgui.ImVec2(125, 25)) then thisScript():reload() end
-                imgui.SetCursorPosX(5) if imgui.Button(u8'Выгрузить', imgui.ImVec2(125, 25)) then thisScript():unload() end
+            imgui.FunctionChild(u8'Г‘ГЄГ°ГЁГЇГІ', u8'Г“ГЇГ°Г ГўГ«ГҐГ­ГЁГҐ Г±ГЄГ°ГЁГЇГІГ®Г¬', nil, imgui.ImVec2(150, 110), nil)
+                imgui.SetCursorPosX(5) if imgui.Button(u8'ГЏГҐГ°ГҐГ§Г ГЈГ°ГіГ§ГЁГІГј', imgui.ImVec2(125, 25)) then thisScript():reload() end
+                imgui.SetCursorPosX(5) if imgui.Button(u8'Г‚Г»ГЈГ°ГіГ§ГЁГІГј', imgui.ImVec2(125, 25)) then thisScript():unload() end
             imgui.EndChild()
             imgui.PopStyleColor()
 
             imgui.SetCursorPos(imgui.ImVec2(size.x - 15 - 150, 55 + 15 + 110))
-            imgui.FunctionChild(u8'Связь с автором', u8'Сообщить об ошибке', nil, imgui.ImVec2(150, 170), nil)
+            imgui.FunctionChild(u8'Г‘ГўГїГ§Гј Г± Г ГўГІГ®Г°Г®Г¬', u8'Г‘Г®Г®ГЎГ№ГЁГІГј Г®ГЎ Г®ГёГЁГЎГЄГҐ', nil, imgui.ImVec2(150, 170), nil)
                 imgui.SetCursorPosX(5) if imgui.Button(u8'Discord', imgui.ImVec2(125, 25)) then os.execute('explorer "https://discord.gg/mdRrvGBnE9"') end
                 imgui.SetCursorPosX(5) if imgui.Button(u8'VK', imgui.ImVec2(125, 25)) then os.execute('explorer "https://vk.com/chaposcripts"') end
                 imgui.SetCursorPosX(5) if imgui.Button(u8'Telegram', imgui.ImVec2(125, 25)) then os.execute('explorer "https://t.me/ya_chapo"') end
@@ -2245,22 +2246,22 @@ local newFrame = imgui.OnFrame(
         end
         imgui.PopFont()
 
-        if imgui.BeginPopupModal(u8'Переименование', RENAME.win, imgui.WindowFlags.NoResize) then
-            imgui.Text(u8'Старое название:') 
-            imgui.Text(u8'Новое название:') 
+        if imgui.BeginPopupModal(u8'ГЏГҐГ°ГҐГЁГ¬ГҐГ­Г®ГўГ Г­ГЁГҐ', RENAME.win, imgui.WindowFlags.NoResize) then
+            imgui.Text(u8'Г‘ГІГ Г°Г®ГҐ Г­Г Г§ГўГ Г­ГЁГҐ:') 
+            imgui.Text(u8'ГЌГ®ГўГ®ГҐ Г­Г Г§ГўГ Г­ГЁГҐ:') 
             imgui.EndPopup()
             --RENAME.win
         end
        
-        if imgui.BeginPopup(u8'Тема меню') then--, imgui.new.bool(true), imgui.WindowFlags.NoResize) then
+        if imgui.BeginPopup(u8'Г’ГҐГ¬Г  Г¬ГҐГ­Гѕ') then--, imgui.new.bool(true), imgui.WindowFlags.NoResize) then
             imgui.SetWindowSizeVec2(imgui.ImVec2(300, 200))
 
 
-            imgui.ColorEdit4('##COLORS.back', COLORS.back, imgui.ColorEditFlags.NoInputs)   imgui.SameLine()        imgui.Text(u8'Фон')
-            imgui.ColorEdit4('##COLORS.frame', COLORS.frame, imgui.ColorEditFlags.NoInputs) imgui.SameLine()        imgui.Text(u8'Окна')
-            imgui.ColorEdit4('##COLORS.elements', COLORS.elements, imgui.ColorEditFlags.NoInputs) imgui.SameLine()  imgui.Text(u8'Элементы')
-            imgui.ColorEdit4('##COLORS.text', COLORS.text, imgui.ColorEditFlags.NoInputs) imgui.SameLine()          imgui.Text(u8'Текст')
-            if imgui.Button(u8'Сбросить', imgui.ImVec2(100, 24)) then
+            imgui.ColorEdit4('##COLORS.back', COLORS.back, imgui.ColorEditFlags.NoInputs)   imgui.SameLine()        imgui.Text(u8'Г”Г®Г­')
+            imgui.ColorEdit4('##COLORS.frame', COLORS.frame, imgui.ColorEditFlags.NoInputs) imgui.SameLine()        imgui.Text(u8'ГЋГЄГ­Г ')
+            imgui.ColorEdit4('##COLORS.elements', COLORS.elements, imgui.ColorEditFlags.NoInputs) imgui.SameLine()  imgui.Text(u8'ГќГ«ГҐГ¬ГҐГ­ГІГ»')
+            imgui.ColorEdit4('##COLORS.text', COLORS.text, imgui.ColorEditFlags.NoInputs) imgui.SameLine()          imgui.Text(u8'Г’ГҐГЄГ±ГІ')
+            if imgui.Button(u8'Г‘ГЎГ°Г®Г±ГЁГІГј', imgui.ImVec2(100, 24)) then
                 COLORS = {
                     back =      imgui.new.float[4](0.1, 0.13, 0.17, 1.00),
                     frame =     imgui.new.float[4](0.13, 0.16, 0.2, 1.00),
@@ -2272,10 +2273,10 @@ local newFrame = imgui.OnFrame(
             imgui.EndPopup()
         end
 
-        if imgui.BeginPopupModal(u8'Благодарности', imgui.new.bool(true), imgui.WindowFlags.NoResize) then
+        if imgui.BeginPopupModal(u8'ГЃГ«Г ГЈГ®Г¤Г Г°Г­Г®Г±ГІГЁ', imgui.new.bool(true), imgui.WindowFlags.NoResize) then
             imgui.SetWindowSizeVec2(imgui.ImVec2(300, 200))
             
-            imgui.TextWrapped(u8'Спасибо @copypaste_scripter, @livingflore, @darkdakilla, @shade, и @duas за помощь в добавлении новых предметов, так же отдельно я хотел бы поблагодарить YarikVL и FSA.')
+            imgui.TextWrapped(u8'Г‘ГЇГ Г±ГЁГЎГ® @copypaste_scripter, @livingflore, @darkdakilla, @shade, ГЁ @duas Г§Г  ГЇГ®Г¬Г®Г№Гј Гў Г¤Г®ГЎГ ГўГ«ГҐГ­ГЁГЁ Г­Г®ГўГ»Гµ ГЇГ°ГҐГ¤Г¬ГҐГІГ®Гў, ГІГ ГЄ Г¦ГҐ Г®ГІГ¤ГҐГ«ГјГ­Г® Гї ГµГ®ГІГҐГ« ГЎГ» ГЇГ®ГЎГ«Г ГЈГ®Г¤Г Г°ГЁГІГј YarikVL ГЁ FSA.')
             imgui.EndPopup()
         end
 
@@ -2323,9 +2324,9 @@ local trackerFrame = imgui.OnFrame(
                         imgui.PopItemWidth()
                         if imgui.IsItemClicked() then
                             setClipboardText(V.strdata)
-                            msg('Данные скопированы в буфер обмена! (для вставки нажмите CTRL + C)')
+                            msg('Г„Г Г­Г­Г»ГҐ Г±ГЄГ®ГЇГЁГ°Г®ГўГ Г­Г» Гў ГЎГіГґГҐГ° Г®ГЎГ¬ГҐГ­Г ! (Г¤Г«Гї ГўГ±ГІГ ГўГЄГЁ Г­Г Г¦Г¬ГЁГІГҐ CTRL + C)')
                         end
-                        imgui.Hint('##HINT_VACS.TRACKER.LIST.PLAYER:'..tostring(k)..'.INDEX:'..tostring(SLOT), u8'Нажмите что бы скопировать в буфер обмена!')
+                        imgui.Hint('##HINT_VACS.TRACKER.LIST.PLAYER:'..tostring(k)..'.INDEX:'..tostring(SLOT), u8'ГЌГ Г¦Г¬ГЁГІГҐ Г·ГІГ® ГЎГ» Г±ГЄГ®ГЇГЁГ°Г®ГўГ ГІГј Гў ГЎГіГґГҐГ° Г®ГЎГ¬ГҐГ­Г !')
                     end
                 end 
             end
@@ -2443,24 +2444,24 @@ end
 
 TRACKER.font = renderCreateFont('Tahoma', 6, 5)
 local SAMP_FFI_BONES = {
-    [1] = {FFI = 3, name = u8'Спина'},
-    [2] = {FFI = 8, name = u8'Голова'},
-    [3] = {FFI = 32, name = u8'Плечо левой руки'},
-    [4] = {FFI = 22, name = u8'Плечо правой руки'},
-    [5] = {FFI = 34, name = u8'Левая рука'},
-    [6] = {FFI = 24, name = u8'Правая рука'},
-    [7] = {FFI = 42, name = u8'Левое бедро'},
-    [8] = {FFI = 52, name = u8'Правое бедро'},
-    [9] = {FFI = 44, name = u8'Левая нога'},
-    [10] = {FFI = 54, name = u8'Правая нога'},
-    [11] = {FFI = 53, name = u8'Правая голень'},
-    [12] = {FFI = 43, name = u8'Левая голень'},
-    [13] = {FFI = 33, name = u8'Левое предплечье'},
-    [14] = {FFI = 23, name = u8'Правое предплечье'},
-    [15] = {FFI = 31, name = u8'Левая ключица'},
-    [16] = {FFI = 21, name = u8'Правая ключица'},
-    [17] = {FFI = 4, name = u8'Шея'},
-    [18] = {FFI = 5, name = u8'Челюсть'},
+    [1] = {FFI = 3, name = u8'Г‘ГЇГЁГ­Г '},
+    [2] = {FFI = 8, name = u8'ГѓГ®Г«Г®ГўГ '},
+    [3] = {FFI = 32, name = u8'ГЏГ«ГҐГ·Г® Г«ГҐГўГ®Г© Г°ГіГЄГЁ'},
+    [4] = {FFI = 22, name = u8'ГЏГ«ГҐГ·Г® ГЇГ°Г ГўГ®Г© Г°ГіГЄГЁ'},
+    [5] = {FFI = 34, name = u8'Г‹ГҐГўГ Гї Г°ГіГЄГ '},
+    [6] = {FFI = 24, name = u8'ГЏГ°Г ГўГ Гї Г°ГіГЄГ '},
+    [7] = {FFI = 42, name = u8'Г‹ГҐГўГ®ГҐ ГЎГҐГ¤Г°Г®'},
+    [8] = {FFI = 52, name = u8'ГЏГ°Г ГўГ®ГҐ ГЎГҐГ¤Г°Г®'},
+    [9] = {FFI = 44, name = u8'Г‹ГҐГўГ Гї Г­Г®ГЈГ '},
+    [10] = {FFI = 54, name = u8'ГЏГ°Г ГўГ Гї Г­Г®ГЈГ '},
+    [11] = {FFI = 53, name = u8'ГЏГ°Г ГўГ Гї ГЈГ®Г«ГҐГ­Гј'},
+    [12] = {FFI = 43, name = u8'Г‹ГҐГўГ Гї ГЈГ®Г«ГҐГ­Гј'},
+    [13] = {FFI = 33, name = u8'Г‹ГҐГўГ®ГҐ ГЇГ°ГҐГ¤ГЇГ«ГҐГ·ГјГҐ'},
+    [14] = {FFI = 23, name = u8'ГЏГ°Г ГўГ®ГҐ ГЇГ°ГҐГ¤ГЇГ«ГҐГ·ГјГҐ'},
+    [15] = {FFI = 31, name = u8'Г‹ГҐГўГ Гї ГЄГ«ГѕГ·ГЁГ¶Г '},
+    [16] = {FFI = 21, name = u8'ГЏГ°Г ГўГ Гї ГЄГ«ГѕГ·ГЁГ¶Г '},
+    [17] = {FFI = 4, name = u8'ГГҐГї'},
+    [18] = {FFI = 5, name = u8'Г—ГҐГ«ГѕГ±ГІГј'},
 }
 
 function SetRwObjectAlpha(handle, alpha)
@@ -2481,7 +2482,7 @@ function main()
     applySampfuncsPatch()
     requestAnimation('SKATE')
     while not isSampAvailable() do wait(0) end
-    while not isSampfuncsLoаded() do wait(0) end
+    while not isSampfuncsLoГ ded() do wait(0) end
 
    -- msg(type(update():GetRawData()))
     local updData = update():GetRawData()
@@ -2493,18 +2494,18 @@ function main()
 
         if tostring(thisScript().version) ~= tostring(UPDATE_WINDOW.last) then
             UPDATE_WINDOW.win[0] = true
-            msg('Доступно обновление! ('..tostring(thisScript().version) .. '>>' .. tostring(UPDATE_WINDOW.last)..')')
+            msg('Г„Г®Г±ГІГіГЇГ­Г® Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГҐ! ('..tostring(thisScript().version) .. '>>' .. tostring(UPDATE_WINDOW.last)..')')
         end
     else
         msg('UPDATE ERROR: '..updData.ERROR)
     end
 
     
-    print('Скрипт загружен, ожидание спавна...')
+    print('Г‘ГЄГ°ГЁГЇГІ Г§Г ГЈГ°ГіГ¦ГҐГ­, Г®Г¦ГЁГ¤Г Г­ГЁГҐ Г±ГЇГ ГўГ­Г ...')
     while not sampIsLocalPlayerSpawned() do wait(0) end
-    print('Персонаж заспавнен, скрипт запущен!')
-    msg('Загружен! Автор: {'..ColorFloatToCHex(COLORS.elements)..'}chapo{ffffff} ({'..ColorFloatToCHex(COLORS.elements)..'}vk.com/chaposcripts{ffffff})')
-    msg('Открыть меню: {'..ColorFloatToCHex(COLORS.elements)..'}/vacs')
+    print('ГЏГҐГ°Г±Г®Г­Г Г¦ Г§Г Г±ГЇГ ГўГ­ГҐГ­, Г±ГЄГ°ГЁГЇГІ Г§Г ГЇГіГ№ГҐГ­!')
+    msg('Г‡Г ГЈГ°ГіГ¦ГҐГ­! ГЂГўГІГ®Г°: {'..ColorFloatToCHex(COLORS.elements)..'}chapo{ffffff} ({'..ColorFloatToCHex(COLORS.elements)..'}vk.com/chaposcripts{ffffff})')
+    msg('ГЋГІГЄГ°Г»ГІГј Г¬ГҐГ­Гѕ: {'..ColorFloatToCHex(COLORS.elements)..'}/vacs')
     ROLLERFIX_object = createObject(19843, 0, 0, 0)
     setObjectRotation(ROLLERFIX_object, 0, 0, 0)
     setObjectScale(ROLLERFIX_object, 0)
@@ -2512,7 +2513,7 @@ function main()
     local status, list = vACS():UpdateList()
     local custom_status, custom_count = initCustomAcs()
     if status then
-        msg('Список аксессуаров загружен!' .. (custom_status and ' (Кастомных: '..custom_count..')' or ''))
+        msg('Г‘ГЇГЁГ±Г®ГЄ Г ГЄГ±ГҐГ±Г±ГіГ Г°Г®Гў Г§Г ГЈГ°ГіГ¦ГҐГ­!' .. (custom_status and ' (ГЉГ Г±ГІГ®Г¬Г­Г»Гµ: '..custom_count..')' or ''))
     end
     if not doesDirectoryExist(script.folder) then createDirectory(script.folder)  end
 
@@ -2530,7 +2531,7 @@ function main()
         for SLOT, DATA in pairs(ACS) do
             if DATA.item ~= 'none' and acs[SLOT][DATA.item] == nil then
                 ACS[SLOT].item = 'none'
-                msg('Выбранный предмет для слота '..SLOT..' был сброшен! (выбранного предмета нет в списке!)')
+                msg('Г‚Г»ГЎГ°Г Г­Г­Г»Г© ГЇГ°ГҐГ¤Г¬ГҐГІ Г¤Г«Гї Г±Г«Г®ГІГ  '..SLOT..' ГЎГ»Г« Г±ГЎГ°Г®ГёГҐГ­! (ГўГ»ГЎГ°Г Г­Г­Г®ГЈГ® ГЇГ°ГҐГ¤Г¬ГҐГІГ  Г­ГҐГІ Гў Г±ГЇГЁГ±ГЄГҐ!)')
             end
         end 
         --==[ TRACKER ]==--
@@ -2577,7 +2578,7 @@ function main()
             }
             if not isCharInAnyCar(PLAYER_PED) then
                 for i = 1, #rollerSkins do
-                    if rollerSkins[i] == getCharModel(PLAYER_PED) or SKIN.walk == u8'Роллер' then
+                    if rollerSkins[i] == getCharModel(PLAYER_PED) or SKIN.walk == u8'ГђГ®Г«Г«ГҐГ°' then
                         --==[ SPEED ON GRASS/SAND ]==--
                         if not isCharInAnyCar(PLAYER_PED) then
                             local x, y, z = getCharCoordinates(PLAYER_PED) 
@@ -2758,9 +2759,9 @@ function imgui.FunctionChild(title, description, bool, size, colors, checkbox_ca
         imgui.PushStyleColor(imgui.Col.FrameBgHovered, ColorFloatToVec(COLORS.back)) -- CRASH
         imgui.PushStyleColor(imgui.Col.FrameBgActive, ColorFloatToVec(COLORS.back)) -- CRASH
         if imgui.Checkbox('##'..title..'::'..description, bool) then
-            if title == u8'Скин' then
+            if title == u8'Г‘ГЄГЁГ­' then
                 vACS():SetSkin(SKIN.SkinChanger[0] and SKIN.model[0] or SKIN.SERVER_SKIN)
-            elseif title == u8'Аура' then
+            elseif title == u8'ГЂГіГ°Г ' then
                 vACS():ToggleGlow(SKIN.glow[0])
             end
         end
@@ -2996,7 +2997,7 @@ SFPRO = {
 
 
 
-function isSampfuncsLoаded()
+function isSampfuncsLoГ ded()
     if not thisScript().filename:find('!vAcs by chapo') then
         printStyledString('~p~~w~vACS ~r~ERORR', 5500, 7)
         for i = 1, 5 do

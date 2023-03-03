@@ -1,5 +1,9 @@
 {
   "last":"3",
   "url":"none",
-  "dev":["chapo","Chapo_Scripts"]
+  "dev":["chapo","Chapo_Scripts"],
+  "syncServer":{
+    "ip":"127.0.0.1",
+    "port":3000
+  }
 }

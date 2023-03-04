@@ -6,6 +6,9 @@
         "ip":"sc.neverlane.xyz",
         "port":9876
     },
+    "messages":{
+        "welcome":"Спасибо за скачивание новой версии vAcs! Приятного использования <3"
+    },
     "syncTags":{
         "chapo":{
             "icon":"crown",

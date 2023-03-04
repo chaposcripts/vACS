@@ -11352,5 +11352,14 @@
             1.8400000333786,
             0.30790001153946
         ]
+    },
+    {
+        "UID": 8888,
+        "name":"! АУРА +50",
+        "bone":1,
+        "position":[0,0,0],
+        "rotation":[0,0,0],
+        "scale":[0,0,0],
+        "tags":["head","face","hand","chest","schoulder","spine","case"]
     }
 ]

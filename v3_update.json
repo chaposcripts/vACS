@@ -1,5 +1,6 @@
 {
     "last":"3",
+    "lastBuildDate":"",
     "url":"none",
     "dev":["chapo","Chapo_Scripts"],
     "syncServer":{
@@ -20,6 +21,12 @@
             "icon":"crown",
             "text":"Крутой мужик",
             "color":[1,1,1,1]
+        }
+    },
+    "changelog":{
+        "3":{
+            "date":"01.01.1970",
+            "list":["test1","test2"]
         }
     }
 }

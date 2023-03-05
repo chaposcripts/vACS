@@ -3,6 +3,7 @@
     "url":"none",
     "dev":["chapo","Chapo_Scripts"],
     "syncServer":{
+        "enabled":true,
         "ip":"sc.neverlane.xyz",
         "port":9876
     },

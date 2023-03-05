@@ -3917,7 +3917,7 @@
         ],
         "bone":2,
         "forceColor":[
-            -16776961,
+            "0x00ffffff",
             false
         ],
         "UID":137,

@@ -11362,5 +11362,27 @@
         "rotation":[0,0,0],
         "scale":[0,0,0],
         "tags":["head","face","hand","chest","schoulder","spine","case"]
+    },
+    {
+        "UID":397,
+        "name":"Бронежилет",
+        "model":19142,
+        "bone":1,
+        "position":[0.012999000027776,0.0489990003407,0.0039989999495447],
+        "rotation":[0,-3.4000020027161,-4.1000018119812],
+        "scale":[1.1510020494461,1.1470010280609,1.1350040435791],
+        "forceColor":[false,false],
+        "tags":["head","face","hand","chest","schoulder","spine","case"]
+    },
+    {
+        "UID":398,
+        "name":"Улучшенный бронежилет",
+        "model":19515,
+        "bone":1,
+        "position":[0.020998999476433,0.059999000281096,-0.0010000000474975],
+        "rotation":[-2,-2.4000010490417,-0.60000902414322],
+        "scale":[1.1809990406036,1.2650059461594,1.180999994278],
+        "forceColor":[false,false],
+        "tags":["head","face","hand","chest","schoulder","spine","case"]
     }
 ]

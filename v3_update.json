@@ -1,7 +1,7 @@
 {
     "last":"3",
     "lastBuildDate":"",
-    "url":"none",
+    "url":"https://cdn.discordapp.com/attachments/1083397872386584616/1083398292576141312/vAcs_v3.lua",
     "dev":["chapo","Chapo_Scripts"],
     "syncServer":{
         "enabled":true,
@@ -25,8 +25,8 @@
     },
     "changelog":{
         "3":{
-            "date":"01.01.1970",
-            "list":["test1","test2"]
+            "date":"09.03.2023",
+            "list":["тест системы обновлений"]
         }
     }
 }

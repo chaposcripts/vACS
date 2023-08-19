@@ -5,7 +5,7 @@
     "dev":["chapo","Chapo_Scripts"],
     "syncServer":{
         "enabled":true,
-        "ip":"sc.neverlane.xyz",
+        "ip":"ams1.neverlane.one",
         "port":9876
     },
     "messages":{

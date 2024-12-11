@@ -1,3 +1,17 @@
 {
-  
+    "update":{
+        "last":"r1.1",
+        "url":"",
+        "changelog":[
+            {"version":"r1.1","date":"01.01.2025","log":["RELEASE!"]}
+        ]
+    },
+    "sync":{
+        "enabled":true,
+        "host":"https://moujeek.ru",
+        "enable_sync_tags":true
+    },
+    "auth":{
+        "host":"https://moujeek.ru"
+    }
 }

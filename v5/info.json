@@ -12,6 +12,6 @@
         "enable_sync_tags":true
     },
     "auth":{
-        "host":"https://moujeek.ru"
+        "host":"http://127.0.0.1:8932/"
     }
 }

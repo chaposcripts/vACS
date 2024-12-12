@@ -11,6 +11,10 @@
         "host":"https://moujeek.ru",
         "enable_sync_tags":true
     },
+    "library":{
+        "enabled":true,
+        "url":"http://127.0.0.1:8932/"
+    },
     "auth":{
         "host":"http://127.0.0.1:8932/"
     }
